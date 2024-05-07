@@ -14,6 +14,7 @@
 		5B1457232443E9E2001BC8BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B1457222443E9E2001BC8BD /* Preview Assets.xcassets */; };
 		5B1457262443E9E2001BC8BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1457242443E9E2001BC8BD /* LaunchScreen.storyboard */; };
 		5B14572E2443FA3C001BC8BD /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B14572D2443FA3C001BC8BD /* WeSplitView.swift */; };
+		5BC5FDF62BEAE4D7005A000F /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		5B1457252443E9E2001BC8BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B1457272443E9E2001BC8BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B14572D2443FA3C001BC8BD /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
+		5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				5B1457242443E9E2001BC8BD /* LaunchScreen.storyboard */,
 				5B1457272443E9E2001BC8BD /* Info.plist */,
 				5B1457212443E9E2001BC8BD /* Preview Content */,
+				5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				5B14571A2443E9E0001BC8BD /* AppDelegate.swift in Sources */,
 				5B14571C2443E9E0001BC8BD /* SceneDelegate.swift in Sources */,
 				5B14571E2443E9E0001BC8BD /* ContentView.swift in Sources */,
+				5BC5FDF62BEAE4D7005A000F /* HeaderTitle.swift in Sources */,
 				5B14572E2443FA3C001BC8BD /* WeSplitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

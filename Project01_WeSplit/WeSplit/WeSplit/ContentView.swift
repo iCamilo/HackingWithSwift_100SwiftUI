@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Your Favorite Barca Player")) 
+                Section(header: HeaderTitle(title: "Your Favorite Barca Player"))
                 {
                     Picker("Select Your Favorite", selection: $barca) {
                         ForEach(names, id: \.self) {
@@ -25,22 +25,19 @@ struct ContentView: View {
                     }
                     Text("You selected \(barca)")
                 }
-                .font(.title)
-                                    
-                Section(header: Text("2 Way Binding"))
+                
+                Section(header: HeaderTitle(title: "2 Way Binding"))
                 {
                     TextField("Tell me your name", text: $name)
                     Text("Your name is \(name)")
                 }
-                .font(.title)
                 
-                Section(header: Text("For Each"))
+                Section(header: HeaderTitle(title: "For Each"))
                 {
                     ForEach(names, id: \.self) {
                         Text("Barcelon dream player \($0)")
                     }
                 }
-                .font(.title)
             }
             .navigationBarTitle("Title", displayMode: .inline)
         }

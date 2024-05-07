@@ -18,40 +18,45 @@ struct WeSplitView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("How much was the check?")
-                    .font(.headline)) {
-                        TextField("Check Total", text: $checkTotal)
-                            .keyboardType(.decimalPad)
+                Section(header: sectionTitle("How much was the check?"))
+                {
+                    TextField("Check Total", text: $checkTotal)
+                        .keyboardType(.decimalPad)
                 }
                 
-                Section(header: Text("How many people attend?")
-                    .font(.headline)) {
-                        Stepper(value: $numberOfpeople, in: 1...10) {
-                            Text("\(numberOfpeople)")
+                Section(header: sectionTitle("How many people attend?"))
+                {
+                    Stepper(value: $numberOfpeople, in: 1...10) {
+                        Text("\(numberOfpeople)")
+                    }
+                }
+                
+                Section(header: sectionTitle("What about the tip?"))
+                {
+                    Picker("Tip", selection: $tipPecentage) {
+                        ForEach(0..<tipOptions.count) {
+                            Text("\(self.tipOptions[$0])")
                         }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
-                Section(header: Text("What about the tip?")
-                    .font(.headline)) {
-                        Picker("Tip", selection: $tipPecentage) {
-                            ForEach(0..<tipOptions.count) {
-                                Text("\(self.tipOptions[$0])")
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                }
-                
-                Section(header: Text("How much is it !!!")
-                    .font(.headline)) {
-                        Text("Tip Over Total: $\(calculateTotal().tipOverTotal)")
-                        Text("Total Plus Tip: $\(calculateTotal().totalPlusTip)")
-                        Text("Total Per Person: $ \(calculateTotal().totalPerPerson)")
+                Section(header: HeaderTitle(title: "TOTAL"))
+                {
+                    Text("Tip Over Total: $\(calculateTotal().tipOverTotal)")
+                    Text("Total Plus Tip: $\(calculateTotal().totalPlusTip)")
+                    Text("Total Per Person: $ \(calculateTotal().totalPerPerson)")
                 }
                 .foregroundColor(tipPecentage == 0 ? .red : tipPecentage > 2 ? .green : .blue )
-                    
                 
-            }.navigationBarTitle("We Split")
+                
+            }
+            .navigationBarTitle("We Split")
         }
+    }
+    
+    private func sectionTitle(_ title: String) -> some View {
+        HeaderTitle(title: title, font: .headline)
     }
 }
 
