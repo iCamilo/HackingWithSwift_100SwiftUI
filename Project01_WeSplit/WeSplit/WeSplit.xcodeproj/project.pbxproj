@@ -75,14 +75,12 @@
 			children = (
 				5B1457192443E9E0001BC8BD /* AppDelegate.swift */,
 				5B14571B2443E9E0001BC8BD /* SceneDelegate.swift */,
-				5B14571D2443E9E0001BC8BD /* ContentView.swift */,
-				5B14572D2443FA3C001BC8BD /* WeSplitView.swift */,
+				5BC5FDF72BEAEBEF005A000F /* UI */,
 				5B1457172443E9E0001BC8BD /* Products */,
 				5B14571F2443E9E2001BC8BD /* Assets.xcassets */,
 				5B1457242443E9E2001BC8BD /* LaunchScreen.storyboard */,
 				5B1457272443E9E2001BC8BD /* Info.plist */,
 				5B1457212443E9E2001BC8BD /* Preview Content */,
-				5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -93,6 +91,16 @@
 				5B1457222443E9E2001BC8BD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5BC5FDF72BEAEBEF005A000F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5B14571D2443E9E0001BC8BD /* ContentView.swift */,
+				5B14572D2443FA3C001BC8BD /* WeSplitView.swift */,
+				5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
