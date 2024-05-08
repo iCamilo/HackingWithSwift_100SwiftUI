@@ -33,14 +33,11 @@ class CalculateTip {
 final class TipCalculatorTests: XCTestCase {
             
     func test_totalPartyIsZero_failWithInvalidPartySizeError() {
-        let checkTotal: Double = 10
-        let totalPeople: UInt = 0
-        let tipPercentage: UInt = 10
+        let testInput = TestItem.Input(checkTotal: 100, tipPercentage: 10, partySize: 0)
         let sut = CalculateTip()
         
-        XCTAssertThrowsError(try sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)) {
-            XCTAssertEqual($0 as? CalculateTip.Error, .invalidPartySize)
-        }
+        assertCalculate(sut, forInput: testInput, throws: .invalidPartySize,
+                        "Should throw invalid party size if party size is zero")
     }
             
     func test_calculateTip_addsTipToCheckTotalAndDividesItBetweenPartyMembers() {
@@ -48,8 +45,8 @@ final class TipCalculatorTests: XCTestCase {
             .init(input: .init(checkTotal: 0, tipPercentage: 10, partySize: 5),
                   expectedResult: .init(tipOverTotal: 0, totalPlusTip: 0, totalPerPerson: 0),
                   message: "Tip Total should be zero if the check total is zero"),
-            .init(input: .init(checkTotal: 10, tipPercentage: 0, partySize: 5),
-                  expectedResult: .init(tipOverTotal: 0, totalPlusTip: 10, totalPerPerson: 2),
+            .init(input: .init(checkTotal: 10, tipPercentage: 0, partySize: 1),
+                  expectedResult: .init(tipOverTotal: 0, totalPlusTip: 10, totalPerPerson: 10),
                   message: "Tip Total should not add tip to check total if tip percentage is zero"),
             .init(input: .init(checkTotal: 10, tipPercentage: 10, partySize: 1),
                   expectedResult: .init(tipOverTotal: 1, totalPlusTip: 11, totalPerPerson: 11),
@@ -73,6 +70,16 @@ final class TipCalculatorTests: XCTestCase {
                                           dividedBetween: input.partySize)
         
         XCTAssertEqual(tipTotal, expected, message, file: file, line: line)
+    }
+    
+    private func assertCalculate(_ sut: CalculateTip, forInput input: TestItem.Input, throws error: CalculateTip.Error, _ message: String, file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertThrowsError(
+            try sut.calculate(forCheckTotal: input.checkTotal,
+                              withTipPercentage: input.tipPercentage,
+                              dividedBetween: input.partySize)
+        ) {
+            XCTAssertEqual($0 as? CalculateTip.Error, error, message, file: file, line: line)
+        }
     }
     
     private struct TestItem {
