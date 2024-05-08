@@ -4,7 +4,13 @@
 
 import Foundation
 
-public final class CalculateTip {    
+public protocol TipCalculator {
+    func calculate(forCheckTotal checkTotal: Double,
+                   withTipPercentage tipPercentage: UInt,
+                   dividedBetween partySize: UInt) throws -> TipTotal
+}
+
+public final class CalculateTip: TipCalculator {
     public enum Error: Swift.Error {
         case invalidPartySize
     }
