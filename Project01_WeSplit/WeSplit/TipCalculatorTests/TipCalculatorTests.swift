@@ -7,7 +7,15 @@ import XCTest
 class CalculateTip {
     typealias TipTotal = (tipOverTotal: Double, totalPlusTip: Double, totalPerPerson: Double)
     
-    func calculate(forCheckTotal: Double, withTipPercentage: UInt, dividedBetween: UInt) -> TipTotal {
+    enum Error: Swift.Error {
+        case invalidPartySize
+    }
+    
+    func calculate(forCheckTotal: Double, withTipPercentage: UInt, dividedBetween partySize: UInt) throws -> TipTotal {
+        guard partySize > 0 else {
+            throw Error.invalidPartySize
+        }
+        
         return (0, 0, 0)
     }
 }
@@ -20,11 +28,22 @@ final class TipCalculatorTests: XCTestCase {
         let tipPercentage: UInt = 10
         let sut = CalculateTip()
         
-        let tipTotal = sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)
+        let tipTotal = try? sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)
         
-        XCTAssertEqual(tipTotal.tipOverTotal, 0)
-        XCTAssertEqual(tipTotal.totalPlusTip, 0)
-        XCTAssertEqual(tipTotal.totalPerPerson, 0)
+        XCTAssertEqual(tipTotal?.tipOverTotal, 0)
+        XCTAssertEqual(tipTotal?.totalPlusTip, 0)
+        XCTAssertEqual(tipTotal?.totalPerPerson, 0)
+    }
+    
+    func test_totalPartyIsZero_failWithInvalidPartySizeError() {
+        let checkTotal: Double = 10
+        let totalPeople: UInt = 0
+        let tipPercentage: UInt = 10
+        let sut = CalculateTip()
+        
+        XCTAssertThrowsError(try sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)) {
+            XCTAssertEqual($0 as? CalculateTip.Error, .invalidPartySize)
+        }
     }
     
 }
