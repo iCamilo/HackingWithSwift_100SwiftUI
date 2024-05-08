@@ -5,7 +5,7 @@
 import XCTest
 import TipCalculator
 
-final class TipCalculatorTests: XCTestCase {
+final class CalculateTipsTests: XCTestCase {
             
     func test_totalPartyIsZero_failWithInvalidPartySizeError() {
         let testInput = TestItem.Input(checkTotal: 100, tipPercentage: 10, partySize: 0)
