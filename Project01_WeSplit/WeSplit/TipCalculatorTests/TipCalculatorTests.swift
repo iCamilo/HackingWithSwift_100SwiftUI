@@ -3,32 +3,7 @@
 
 
 import XCTest
-
-struct TipTotal: Equatable {
-    var tipOverTotal: Double
-    var totalPlusTip: Double
-    var totalPerPerson: Double
-}
-
-class CalculateTip {
-    enum Error: Swift.Error {
-        case invalidPartySize
-    }
-    
-    func calculate(forCheckTotal checkTotal: Double, withTipPercentage tipPercentage: UInt, dividedBetween partySize: UInt) throws -> TipTotal {
-        guard partySize > 0 else {
-            throw Error.invalidPartySize
-        }
-        
-        let tipOverTotal: Double = checkTotal * Double(tipPercentage) / 100
-        let totalPlusTip: Double = checkTotal + tipOverTotal
-        let totalPerPerson: Double = totalPlusTip / Double(partySize)
-        
-        return .init(tipOverTotal: tipOverTotal,
-                     totalPlusTip: totalPlusTip,
-                     totalPerPerson: totalPerPerson)
-    }
-}
+import TipCalculator
 
 final class TipCalculatorTests: XCTestCase {
             
