@@ -20,6 +20,7 @@
 		5BC5FE252BEBD843005A000F /* TipCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE192BEBD843005A000F /* TipCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */; };
 		5BC5FE322BEBEFFC005A000F /* CalculateTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */; };
+		5BC5FE342BEC0285005A000F /* RateTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE332BEC0285005A000F /* RateTipTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
 		5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTip.swift; sourceTree = "<group>"; };
+		5BC5FE332BEC0285005A000F /* RateTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTipTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */,
+				5BC5FE332BEC0285005A000F /* RateTipTests.swift */,
 			);
 			path = TipCalculatorTests;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC5FE242BEBD843005A000F /* CalculateTipsTests.swift in Sources */,
+				5BC5FE342BEC0285005A000F /* RateTipTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
