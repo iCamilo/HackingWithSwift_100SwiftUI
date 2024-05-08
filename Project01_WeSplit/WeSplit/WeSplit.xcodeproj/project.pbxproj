@@ -162,8 +162,8 @@
 		5BC5FE222BEBD843005A000F /* TipCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */,
-				5BC5FE332BEC0285005A000F /* RateTipTests.swift */,
+				5BC5FE3A2BEC09BA005A000F /* CalculateTip */,
+				5BC5FE3B2BEC09C5005A000F /* RateTip */,
 			);
 			path = TipCalculatorTests;
 			sourceTree = "<group>";
@@ -182,6 +182,22 @@
 			children = (
 				5BC5FE352BEC0883005A000F /* RateTip.swift */,
 				5BC5FE372BEC094F005A000F /* TipRate.swift */,
+			);
+			path = RateTip;
+			sourceTree = "<group>";
+		};
+		5BC5FE3A2BEC09BA005A000F /* CalculateTip */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */,
+			);
+			path = CalculateTip;
+			sourceTree = "<group>";
+		};
+		5BC5FE3B2BEC09C5005A000F /* RateTip */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5FE332BEC0285005A000F /* RateTipTests.swift */,
 			);
 			path = RateTip;
 			sourceTree = "<group>";
