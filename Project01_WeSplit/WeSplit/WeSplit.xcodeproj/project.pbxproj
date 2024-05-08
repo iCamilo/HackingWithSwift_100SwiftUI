@@ -21,6 +21,8 @@
 		5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */; };
 		5BC5FE322BEBEFFC005A000F /* CalculateTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */; };
 		5BC5FE342BEC0285005A000F /* RateTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE332BEC0285005A000F /* RateTipTests.swift */; };
+		5BC5FE362BEC0883005A000F /* RateTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE352BEC0883005A000F /* RateTip.swift */; };
+		5BC5FE382BEC094F005A000F /* TipRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE372BEC094F005A000F /* TipRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
 		5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTip.swift; sourceTree = "<group>"; };
 		5BC5FE332BEC0285005A000F /* RateTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTipTests.swift; sourceTree = "<group>"; };
+		5BC5FE352BEC0883005A000F /* RateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTip.swift; sourceTree = "<group>"; };
+		5BC5FE372BEC094F005A000F /* TipRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +152,9 @@
 		5BC5FE182BEBD843005A000F /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				5BC5FE2E2BEBEF46005A000F /* CalculateTip */,
 				5BC5FE192BEBD843005A000F /* TipCalculator.h */,
+				5BC5FE392BEC096F005A000F /* RateTip */,
+				5BC5FE2E2BEBEF46005A000F /* CalculateTip */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -170,6 +175,15 @@
 				5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */,
 			);
 			path = CalculateTip;
+			sourceTree = "<group>";
+		};
+		5BC5FE392BEC096F005A000F /* RateTip */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5FE352BEC0883005A000F /* RateTip.swift */,
+				5BC5FE372BEC094F005A000F /* TipRate.swift */,
+			);
+			path = RateTip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC5FE362BEC0883005A000F /* RateTip.swift in Sources */,
+				5BC5FE382BEC094F005A000F /* TipRate.swift in Sources */,
 				5BC5FE322BEBEFFC005A000F /* CalculateTip.swift in Sources */,
 				5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */,
 			);
