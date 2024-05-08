@@ -11,12 +11,12 @@ class CalculateTip {
         case invalidPartySize
     }
     
-    func calculate(forCheckTotal: Double, withTipPercentage: UInt, dividedBetween partySize: UInt) throws -> TipTotal {
+    func calculate(forCheckTotal checkTotal: Double, withTipPercentage: UInt, dividedBetween partySize: UInt) throws -> TipTotal {
         guard partySize > 0 else {
             throw Error.invalidPartySize
         }
         
-        return (0, 0, 0)
+        return (0, checkTotal, checkTotal)
     }
 }
 
@@ -44,6 +44,19 @@ final class TipCalculatorTests: XCTestCase {
         XCTAssertThrowsError(try sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)) {
             XCTAssertEqual($0 as? CalculateTip.Error, .invalidPartySize)
         }
+    }
+    
+    func test_tipPercentageIsZero_tipTotalIsEqualToCheckTotal() {
+        let checkTotal: Double = 10
+        let totalPeople: UInt = 1
+        let tipPercentage: UInt = 0
+        let sut = CalculateTip()
+        
+        let tipTotal = try? sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)
+        
+        XCTAssertEqual(tipTotal?.tipOverTotal, 0)
+        XCTAssertEqual(tipTotal?.totalPlusTip, checkTotal)
+        XCTAssertEqual(tipTotal?.totalPerPerson, checkTotal)
     }
     
 }
