@@ -5,16 +5,19 @@
 import Foundation
 
 public struct RateTip {
+    private let excellentTipRange: PartialRangeFrom<UInt> = 21...
+    private let goodTipRange: Range<UInt> = 6..<21
+            
     public init() {}
     
     public func rate(tip: UInt) -> TipRate {
         switch tip {
-        case 0...5:
-            return .low
-        case 6...20:
+        case excellentTipRange:
+            return .excellent
+        case goodTipRange:
             return .good
         default:
-            return .excellent
+            return .low
         }
     }
 }
