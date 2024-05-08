@@ -4,7 +4,11 @@
 
 import Foundation
 
-public struct RateTip {
+public protocol TipRater {
+    func rate(tip: UInt) -> TipRate
+}
+
+public struct RateTip: TipRater {
     private let excellentTipRange: PartialRangeFrom<UInt> = 21...
     private let goodTipRange: Range<UInt> = 6..<21
             
