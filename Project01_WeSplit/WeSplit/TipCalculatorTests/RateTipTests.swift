@@ -7,6 +7,7 @@ import XCTest
 enum RateTipResult {
     case low
     case good
+    case excellent
 }
 
 struct RateTip {
@@ -14,8 +15,10 @@ struct RateTip {
         switch tip {
         case 0...5:
             return .low
-        default:
+        case 6...20:
             return .good
+        default:
+            return .excellent
         }
     }
 }
@@ -27,7 +30,9 @@ final class RateTipTests: XCTestCase {
             (tip: 5, expected: .low, message: "Tips <= 5 should be rated as low"),
             (tip: 0, expected: .low, message: "Tips <= 5 should be rated as low"),
             (tip: 6, expected: .good, message: "Tips > 5 and <= 20 should be rated as good"),
-            (tip: 20, expected: .good, message: "Tips > 5 and <= 20 should be rated as good")           
+            (tip: 20, expected: .good, message: "Tips > 5 and <= 20 should be rated as good"),
+            (tip: 21, expected: .excellent, message: "Tips > 20 should be rated as excellent"),
+            (tip: 50, expected: .excellent, message: "Tips > 20 should be rated as excellent")
         ]
         
         let sut = RateTip()
