@@ -76,4 +76,16 @@ final class TipCalculatorTests: XCTestCase {
         XCTAssertEqual(tipTotal.totalPerPerson, 11.0)
     }
     
+    func test_partySizeIsGreaterThanOne_tipTotalDividesTotalBetweenPartyMembers() {
+        let checkTotal: Double = 10
+        let totalPeople: UInt = 2
+        let tipPercentage: UInt = 10
+        let sut = CalculateTip()
+        
+        let tipTotal = try! sut.calculate(forCheckTotal: checkTotal, withTipPercentage: tipPercentage, dividedBetween: totalPeople)
+        
+        XCTAssertEqual(tipTotal.tipOverTotal, 1.0)
+        XCTAssertEqual(tipTotal.totalPlusTip, 11.0)
+        XCTAssertEqual(tipTotal.totalPerPerson, 5.5)
+    }
 }
