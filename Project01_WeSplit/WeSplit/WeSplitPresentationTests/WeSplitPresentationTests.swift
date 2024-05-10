@@ -15,7 +15,7 @@ struct WeSplitViewModel {
 final class WeSplitPresentationTests: XCTestCase {
     
     func test_showTotalOnlyIfCheckTotalIsANumber() {
-        var sut = WeSplitViewModel()
+        var sut = makeSUT()
         
         sut.checkTotal = ""
         XCTAssertFalse(sut.showTotal)
@@ -26,5 +26,11 @@ final class WeSplitPresentationTests: XCTestCase {
         sut.checkTotal = "100"
         XCTAssertTrue(sut.showTotal)
     }
-
+    
+    // MARK: - Utils
+    func makeSUT() -> WeSplitViewModel {
+        let sut = WeSplitViewModel()
+        
+        return sut
+    }
 }
