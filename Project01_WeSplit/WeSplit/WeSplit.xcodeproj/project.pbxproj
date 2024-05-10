@@ -15,9 +15,9 @@
 		5B1457262443E9E2001BC8BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1457242443E9E2001BC8BD /* LaunchScreen.storyboard */; };
 		5B14572E2443FA3C001BC8BD /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B14572D2443FA3C001BC8BD /* WeSplitView.swift */; };
 		5BC5FDF62BEAE4D7005A000F /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */; };
-		5BC5FE1F2BEBD843005A000F /* TipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC5FE172BEBD843005A000F /* TipCalculator.framework */; };
+		5BC5FE1F2BEBD843005A000F /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */; };
 		5BC5FE242BEBD843005A000F /* CalculateTipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */; };
-		5BC5FE252BEBD843005A000F /* TipCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE192BEBD843005A000F /* TipCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BC5FE252BEBD843005A000F /* WeSplitTipCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */; };
 		5BC5FE322BEBEFFC005A000F /* CalculateTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */; };
 		5BC5FE342BEC0285005A000F /* RateTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE332BEC0285005A000F /* RateTipTests.swift */; };
@@ -69,9 +69,9 @@
 		5B1457272443E9E2001BC8BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B14572D2443FA3C001BC8BD /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		5BC5FDF52BEAE4D7005A000F /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
-		5BC5FE172BEBD843005A000F /* TipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BC5FE192BEBD843005A000F /* TipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipCalculator.h; sourceTree = "<group>"; };
-		5BC5FE1E2BEBD843005A000F /* TipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitTipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitTipCalculator.h; sourceTree = "<group>"; };
+		5BC5FE1E2BEBD843005A000F /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
 		5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTip.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC5FE1F2BEBD843005A000F /* TipCalculator.framework in Frameworks */,
+				5BC5FE1F2BEBD843005A000F /* WeSplitTipCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1457182443E9E0001BC8BD /* WeSplit */,
-				5BC5FE182BEBD843005A000F /* TipCalculator */,
+				5BC5FE182BEBD843005A000F /* WeSplitTipCalculator */,
 				5BC5FE222BEBD843005A000F /* TipCalculatorTests */,
 				5BC5FE422BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE4C2BEC24BE005A000F /* WeSplitPresentationTests */,
@@ -140,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				5B1457162443E9E0001BC8BD /* WeSplit.app */,
-				5BC5FE172BEBD843005A000F /* TipCalculator.framework */,
-				5BC5FE1E2BEBD843005A000F /* TipCalculatorTests.xctest */,
+				5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */,
+				5BC5FE1E2BEBD843005A000F /* WeSplitTipCalculatorTests.xctest */,
 				5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */,
 				5BC5FE482BEC24BE005A000F /* WeSplitPresentationTests.xctest */,
 			);
@@ -182,14 +182,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		5BC5FE182BEBD843005A000F /* TipCalculator */ = {
+		5BC5FE182BEBD843005A000F /* WeSplitTipCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				5BC5FE192BEBD843005A000F /* TipCalculator.h */,
+				5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */,
 				5BC5FE392BEC096F005A000F /* RateTip */,
 				5BC5FE2E2BEBEF46005A000F /* CalculateTip */,
 			);
-			path = TipCalculator;
+			path = WeSplitTipCalculator;
 			sourceTree = "<group>";
 		};
 		5BC5FE222BEBD843005A000F /* TipCalculatorTests */ = {
@@ -258,7 +258,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC5FE252BEBD843005A000F /* TipCalculator.h in Headers */,
+				5BC5FE252BEBD843005A000F /* WeSplitTipCalculator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +291,9 @@
 			productReference = 5B1457162443E9E0001BC8BD /* WeSplit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5BC5FE162BEBD843005A000F /* TipCalculator */ = {
+		5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BC5FE262BEBD843005A000F /* Build configuration list for PBXNativeTarget "TipCalculator" */;
+			buildConfigurationList = 5BC5FE262BEBD843005A000F /* Build configuration list for PBXNativeTarget "WeSplitTipCalculator" */;
 			buildPhases = (
 				5BC5FE122BEBD843005A000F /* Headers */,
 				5BC5FE132BEBD843005A000F /* Sources */,
@@ -304,14 +304,14 @@
 			);
 			dependencies = (
 			);
-			name = TipCalculator;
+			name = WeSplitTipCalculator;
 			productName = TipCalculator;
-			productReference = 5BC5FE172BEBD843005A000F /* TipCalculator.framework */;
+			productReference = 5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5BC5FE1D2BEBD843005A000F /* TipCalculatorTests */ = {
+		5BC5FE1D2BEBD843005A000F /* WeSplitTipCalculatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BC5FE292BEBD843005A000F /* Build configuration list for PBXNativeTarget "TipCalculatorTests" */;
+			buildConfigurationList = 5BC5FE292BEBD843005A000F /* Build configuration list for PBXNativeTarget "WeSplitTipCalculatorTests" */;
 			buildPhases = (
 				5BC5FE1A2BEBD843005A000F /* Sources */,
 				5BC5FE1B2BEBD843005A000F /* Frameworks */,
@@ -322,9 +322,9 @@
 			dependencies = (
 				5BC5FE212BEBD843005A000F /* PBXTargetDependency */,
 			);
-			name = TipCalculatorTests;
+			name = WeSplitTipCalculatorTests;
 			productName = TipCalculatorTests;
-			productReference = 5BC5FE1E2BEBD843005A000F /* TipCalculatorTests.xctest */;
+			productReference = 5BC5FE1E2BEBD843005A000F /* WeSplitTipCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5BC5FE402BEC24BE005A000F /* WeSplitPresentation */ = {
@@ -405,8 +405,8 @@
 			projectRoot = "";
 			targets = (
 				5B1457152443E9E0001BC8BD /* WeSplit */,
-				5BC5FE162BEBD843005A000F /* TipCalculator */,
-				5BC5FE1D2BEBD843005A000F /* TipCalculatorTests */,
+				5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */,
+				5BC5FE1D2BEBD843005A000F /* WeSplitTipCalculatorTests */,
 				5BC5FE402BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE472BEC24BE005A000F /* WeSplitPresentationTests */,
 			);
@@ -507,7 +507,7 @@
 /* Begin PBXTargetDependency section */
 		5BC5FE212BEBD843005A000F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5BC5FE162BEBD843005A000F /* TipCalculator */;
+			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
 			targetProxy = 5BC5FE202BEBD843005A000F /* PBXContainerItemProxy */;
 		};
 		5BC5FE4B2BEC24BE005A000F /* PBXTargetDependency */ = {
@@ -979,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5BC5FE262BEBD843005A000F /* Build configuration list for PBXNativeTarget "TipCalculator" */ = {
+		5BC5FE262BEBD843005A000F /* Build configuration list for PBXNativeTarget "WeSplitTipCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5BC5FE272BEBD843005A000F /* Debug */,
@@ -988,7 +988,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5BC5FE292BEBD843005A000F /* Build configuration list for PBXNativeTarget "TipCalculatorTests" */ = {
+		5BC5FE292BEBD843005A000F /* Build configuration list for PBXNativeTarget "WeSplitTipCalculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5BC5FE2A2BEBD843005A000F /* Debug */,
