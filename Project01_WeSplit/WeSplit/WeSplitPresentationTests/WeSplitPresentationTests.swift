@@ -3,19 +3,49 @@
 
 
 import XCTest
+import WeSplitTipCalculator
 @testable import WeSplitPresentation
 
 struct WeSplitViewModel {
-    var checkTotal: String = ""
+    private(set) var tipCalculator: TipCalculator
+    
+    init(tipCalculator: TipCalculator) {
+        self.tipCalculator = tipCalculator
+    }
+    
+    var checkTotal: String = "" {
+        didSet {
+            calculateTip()
+        }
+    }
+    var tip: UInt = 0 {
+        didSet {
+            calculateTip()
+        }
+    }
+    var totalPeople: UInt = 0 {
+        didSet {
+            calculateTip()
+        }
+    }
+    
     var showTotal: Bool {
         Double(checkTotal) != nil
+    }
+    
+    private func calculateTip() {
+        guard let checkTotal = Double(checkTotal) else {
+            return
+        }
+        
+        let _ = try? tipCalculator.calculate(forCheckTotal: checkTotal, withTipPercentage: tip, dividedBetween: totalPeople)
     }
 }
 
 final class WeSplitPresentationTests: XCTestCase {
     
     func test_showTotalOnlyIfCheckTotalIsANumber() {
-        var sut = makeSUT()
+        var (sut, _) = makeSUT()
         
         sut.checkTotal = ""
         XCTAssertFalse(sut.showTotal)
@@ -27,10 +57,52 @@ final class WeSplitPresentationTests: XCTestCase {
         XCTAssertTrue(sut.showTotal)
     }
     
-    // MARK: - Utils
-    func makeSUT() -> WeSplitViewModel {
-        let sut = WeSplitViewModel()
+    func test_changeAnyInputParameter_calculateTip() {
+        var (sut, tipCalculator) = makeSUT()
         
-        return sut
+        sut.checkTotal = "100"
+        XCTAssertEqual(
+            tipCalculator.messages,
+            [.calculate(checkTotal: 100, tip: 0, partySize: 0)]
+        )
+        
+        sut.tip = 10
+        XCTAssertEqual(
+            tipCalculator.messages,
+            [.calculate(checkTotal: 100, tip: 0, partySize: 0),
+             .calculate(checkTotal: 100, tip: 10, partySize: 0)]
+        )
+        
+        sut.totalPeople = 2
+        XCTAssertEqual(
+            tipCalculator.messages,
+            [.calculate(checkTotal: 100, tip: 0, partySize: 0),
+             .calculate(checkTotal: 100, tip: 10, partySize: 0),
+             .calculate(checkTotal: 100, tip: 10, partySize: 2)]
+        )
+    }
+    
+    // MARK: - Utils
+    func makeSUT() -> (sut: WeSplitViewModel, tipCalculator: TipCalculatorSpy) {
+        let tipCalculator = TipCalculatorSpy()
+        let sut = WeSplitViewModel(tipCalculator: tipCalculator)
+        
+        return (sut, tipCalculator)
+    }
+    
+    final class TipCalculatorSpy: TipCalculator {
+        enum Message: Equatable {
+            case calculate(checkTotal: Double, tip: UInt, partySize: UInt)
+        }
+        
+        private(set) var messages = [Message]()
+        
+        func calculate(forCheckTotal checkTotal: Double,
+                       withTipPercentage tipPercentage: UInt,
+                       dividedBetween partySize: UInt) throws -> WeSplitTipCalculator.TipTotal {
+            messages.append(.calculate(checkTotal: checkTotal, tip: tipPercentage, partySize: partySize))
+            
+            return .init(tipOverTotal: 0, totalPlusTip: 0, totalPerPerson: 0)
+        }
     }
 }
