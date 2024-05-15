@@ -34,7 +34,7 @@ struct WeSplitViewModel {
             calculateTip()
         }
     }
-    var totalPeople: UInt = 0 {
+    var totalPeople: UInt = 1 {
         didSet {
             calculateTip()
         }
@@ -118,8 +118,8 @@ final class WeSplitPresentationTests: XCTestCase {
         
         XCTAssertEqual(
             calculator.messages,
-            [.calculate(checkTotal: 100, tip: 0, partySize: 0),
-             .calculate(checkTotal: 100, tip: 10, partySize: 0),
+            [.calculate(checkTotal: 100, tip: 0, partySize: 1),
+             .calculate(checkTotal: 100, tip: 10, partySize: 1),
              .calculate(checkTotal: 100, tip: 10, partySize: 3)],
             "Should recalculate tip when any of the input params change"
         )
