@@ -9,7 +9,8 @@ import WeSplitTipCalculator
 struct WeSplitViewModel {
     private lazy var tipFormatter: NumberFormatter = {
         let resultFormatter = NumberFormatter()
-        resultFormatter.minimumFractionDigits = 0
+        resultFormatter.numberStyle = .decimal
+        resultFormatter.minimumFractionDigits = 2
         resultFormatter.maximumFractionDigits = 2
         resultFormatter.decimalSeparator = "."
         resultFormatter.alwaysShowsDecimalSeparator = false
@@ -103,33 +104,32 @@ final class WeSplitPresentationTests: XCTestCase {
         assert(sut, showTotal: false)
     }
     
-    func test_changeAnyInputParameter_calculateTip() {
-        var (sut, tipCalculator) = makeSUT()
+    func test_changeAnyInputParameter_shouldReCalculateAndFormatTipResults() {
+        let tipTotal: TipTotal = .init(tipOverTotal: 10,
+                                       totalPlusTip: 100.10,
+                                       totalPerPerson: 33.366666)
+        var (sut, calculator) = makeSUT()
+        calculator.makeCalculateSucceed(with: tipTotal)
+        assert(sut, showTotal: false)
         
         sut.checkTotal = "100"
         sut.tip = 10
-        sut.totalPeople = 2
+        sut.totalPeople = 3
         
         XCTAssertEqual(
-            tipCalculator.messages,
+            calculator.messages,
             [.calculate(checkTotal: 100, tip: 0, partySize: 0),
              .calculate(checkTotal: 100, tip: 10, partySize: 0),
-             .calculate(checkTotal: 100, tip: 10, partySize: 2)],
+             .calculate(checkTotal: 100, tip: 10, partySize: 3)],
             "Should recalculate tip when any of the input params change"
         )
+        
+        assert(sut, showTotal: true)
+        XCTAssertEqual(sut.tipOverTotal, "Tip Over Total: $10.00")
+        XCTAssertEqual(sut.tipPlusTip, "Tip plus Tip: $100.10")
+        XCTAssertEqual(sut.totalPerPerson, "Total per Person: $33.37")
     }
     
-    func test_calculateTip_updateTipResults() {
-        let tipTotal: WeSplitTipCalculator.TipTotal = .init(tipOverTotal: 1, totalPlusTip: 100.099, totalPerPerson: 50.9278)
-        var (sut, calculator) = makeSUT()
-        
-        calculator.makeCalculateSucceed(with: tipTotal)
-        sut.checkTotal = "100"
-       
-        XCTAssertEqual(sut.tipOverTotal, "Tip Over Total: $1")
-        XCTAssertEqual(sut.tipPlusTip, "Tip plus Tip: $100.1")
-        XCTAssertEqual(sut.totalPerPerson, "Total per Person: $50.93")
-    }
             
     // MARK: - Utils
     func makeSUT() -> (sut: WeSplitViewModel, tipCalculator: TipCalculatorSpy) {
