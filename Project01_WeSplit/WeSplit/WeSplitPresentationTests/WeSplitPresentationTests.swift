@@ -46,6 +46,9 @@ struct WeSplitViewModel {
             calculateTip()
         }
     }
+    var totalPeopleDescription: String {
+        "\(totalPeople) \(totalPeople > 1 ? "people" : "person")"
+    }
     var showTotal: Bool = false
     
     var tipOverTotal: String = ""
@@ -94,6 +97,16 @@ final class WeSplitPresentationTests: XCTestCase {
         
         XCTAssertEqual(sut.tipOptions.map { $0.description },
                        ["0%", "5%"])
+    }
+    
+    func test_totalPeopleDescription_showPluralWhenMoreThanOne() {
+        var (sut, _) = makeSUT()
+        
+        sut.totalPeople = 1
+        XCTAssertEqual(sut.totalPeopleDescription, "1 person")
+        
+        sut.totalPeople = 2
+        XCTAssertEqual(sut.totalPeopleDescription, "2 people")
     }
     
     func test_showTotalIfCheckTotalIsANumber() {
