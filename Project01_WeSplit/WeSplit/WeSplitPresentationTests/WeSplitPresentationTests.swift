@@ -11,6 +11,17 @@ struct TipOption {
     var description: String { "\(value)%" }
 }
 
+struct TotalPeopleOption {
+    var value: UInt
+    var description: String {
+        "\(value) \(isPlural ? "people" : "person")"
+    }
+    
+    private var isPlural: Bool {
+        value > 1
+    }
+}
+
 struct WeSplitViewModel {
     private lazy var tipFormatter: NumberFormatter = {
         let resultFormatter = NumberFormatter()
@@ -29,6 +40,7 @@ struct WeSplitViewModel {
     init(tipCalculator: TipCalculator, tipOptions: [TipOption]) {
         self.tipCalculator = tipCalculator
         self.tipOptions = tipOptions
+        self.totalPeople = .init(value: 1)
     }
     
     var checkTotal: String = "" {
@@ -41,13 +53,10 @@ struct WeSplitViewModel {
             calculateTip()
         }
     }
-    var totalPeople: UInt = 1 {
+    var totalPeople: TotalPeopleOption {
         didSet {
             calculateTip()
         }
-    }
-    var totalPeopleDescription: String {
-        "\(totalPeople) \(totalPeople > 1 ? "people" : "person")"
     }
     var showTotal: Bool = false
     
@@ -59,7 +68,7 @@ struct WeSplitViewModel {
         guard let checkTotal = tipFormatter.double(from: checkTotal),
               let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal,
                                                           withTipPercentage: tip,
-                                                          dividedBetween: totalPeople)
+                                                          dividedBetween: totalPeople.value)
         else {
             showTotal = false
             tipOverTotal = ""
@@ -102,11 +111,11 @@ final class WeSplitPresentationTests: XCTestCase {
     func test_totalPeopleDescription_showPluralWhenMoreThanOne() {
         var (sut, _) = makeSUT()
         
-        sut.totalPeople = 1
-        XCTAssertEqual(sut.totalPeopleDescription, "1 person")
+        sut.totalPeople.value = 1
+        XCTAssertEqual(sut.totalPeople.description, "1 person")
         
-        sut.totalPeople = 2
-        XCTAssertEqual(sut.totalPeopleDescription, "2 people")
+        sut.totalPeople.value = 2
+        XCTAssertEqual(sut.totalPeople.description, "2 people")
     }
     
     func test_showTotalIfCheckTotalIsANumber() {
@@ -146,7 +155,7 @@ final class WeSplitPresentationTests: XCTestCase {
         
         sut.checkTotal = "100"
         sut.tip = 10
-        sut.totalPeople = 3
+        sut.totalPeople.value = 3
         
         XCTAssertEqual(
             calculator.messages,
