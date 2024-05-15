@@ -9,11 +9,9 @@ import WeSplitTipCalculator
 struct WeSplitViewModel {
     private lazy var tipFormatter: NumberFormatter = {
         let resultFormatter = NumberFormatter()
-        resultFormatter.numberStyle = .currency
         resultFormatter.minimumFractionDigits = 0
         resultFormatter.maximumFractionDigits = 2
-        resultFormatter.currencyDecimalSeparator = "."
-        resultFormatter.currencySymbol = "$"
+        resultFormatter.decimalSeparator = "."
         resultFormatter.alwaysShowsDecimalSeparator = false
         
         return resultFormatter
@@ -41,7 +39,9 @@ struct WeSplitViewModel {
         }
     }
     var showTotal: Bool {
-        Double(checkTotal) != nil
+        mutating get {
+            tipFormatter.double(from: checkTotal) != nil
+        }
     }
     
     var tipOverTotal: String = ""
@@ -49,20 +49,27 @@ struct WeSplitViewModel {
     var totalPerPerson: String = ""
     
     private mutating func calculateTip() {
-        guard let checkTotal = Double(checkTotal) else {
+        guard let checkTotal = tipFormatter.double(from: checkTotal) else {
             return
         }
-        guard let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal, withTipPercentage: tip, dividedBetween: totalPeople) else { return }
+        guard let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal, 
+                                                          withTipPercentage: tip,
+                                                          dividedBetween: totalPeople)
+        else { return }
         
-        tipOverTotal = "Tip Over Total: \(tipFormatter.string(from: tipTotal.tipOverTotal))"
-        tipPlusTip = "Tip plus Tip: \(tipFormatter.string(from: tipTotal.totalPlusTip))"
-        totalPerPerson = "Total per Person: \(tipFormatter.string(from: tipTotal.totalPerPerson))"
+        tipOverTotal = "Tip Over Total: $\(tipFormatter.string(from: tipTotal.tipOverTotal))"
+        tipPlusTip = "Tip plus Tip: $\(tipFormatter.string(from: tipTotal.totalPlusTip))"
+        totalPerPerson = "Total per Person: $\(tipFormatter.string(from: tipTotal.totalPerPerson))"
     }
 }
 
 private extension NumberFormatter {
     func string(from double: Double) -> String {
         self.string(from: double as NSNumber) ?? ""
+    }
+    
+    func double(from string: String) -> Double? {
+        self.number(from: string) as? Double
     }
 }
 
@@ -103,9 +110,9 @@ final class WeSplitPresentationTests: XCTestCase {
         
         sut.checkTotal = "100"
        
-        XCTAssertEqual(sut.tipOverTotal, "Tip Over Total: $ 1")
-        XCTAssertEqual(sut.tipPlusTip, "Tip plus Tip: $ 100.1")
-        XCTAssertEqual(sut.totalPerPerson, "Total per Person: $ 50.93")
+        XCTAssertEqual(sut.tipOverTotal, "Tip Over Total: $1")
+        XCTAssertEqual(sut.tipPlusTip, "Tip plus Tip: $100.1")
+        XCTAssertEqual(sut.totalPerPerson, "Total per Person: $50.93")
     }
     
     // MARK: - Utils
