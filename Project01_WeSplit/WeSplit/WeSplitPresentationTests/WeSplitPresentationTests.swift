@@ -18,7 +18,7 @@ struct WeSplitViewModel {
         return resultFormatter
     }()
     
-    private(set) var tipCalculator: TipCalculator
+    private let tipCalculator: TipCalculator
     
     init(tipCalculator: TipCalculator) {
         self.tipCalculator = tipCalculator
