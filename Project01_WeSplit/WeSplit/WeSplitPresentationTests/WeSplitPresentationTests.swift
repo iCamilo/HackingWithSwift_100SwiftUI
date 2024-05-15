@@ -61,24 +61,15 @@ final class WeSplitPresentationTests: XCTestCase {
         var (sut, tipCalculator) = makeSUT()
         
         sut.checkTotal = "100"
-        XCTAssertEqual(
-            tipCalculator.messages,
-            [.calculate(checkTotal: 100, tip: 0, partySize: 0)]
-        )
-        
         sut.tip = 10
-        XCTAssertEqual(
-            tipCalculator.messages,
-            [.calculate(checkTotal: 100, tip: 0, partySize: 0),
-             .calculate(checkTotal: 100, tip: 10, partySize: 0)]
-        )
-        
         sut.totalPeople = 2
+        
         XCTAssertEqual(
             tipCalculator.messages,
             [.calculate(checkTotal: 100, tip: 0, partySize: 0),
              .calculate(checkTotal: 100, tip: 10, partySize: 0),
-             .calculate(checkTotal: 100, tip: 10, partySize: 2)]
+             .calculate(checkTotal: 100, tip: 10, partySize: 2)],
+            "Should recalculate tip when any of the input params change"
         )
     }
     
