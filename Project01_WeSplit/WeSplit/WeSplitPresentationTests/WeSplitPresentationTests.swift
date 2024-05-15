@@ -41,6 +41,7 @@ struct WeSplitViewModel {
         self.tipCalculator = tipCalculator
         self.tipOptions = tipOptions
         self.totalPeople = .init(value: 1)
+        self.tip = tipOptions.first ?? .init(value: 0)
     }
     
     var checkTotal: String = "" {
@@ -48,7 +49,7 @@ struct WeSplitViewModel {
             calculateTip()
         }
     }
-    var tip: UInt = 0 {
+    var tip: TipOption {
         didSet {
             calculateTip()
         }
@@ -67,7 +68,7 @@ struct WeSplitViewModel {
     private mutating func calculateTip() {
         guard let checkTotal = tipFormatter.double(from: checkTotal),
               let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal,
-                                                          withTipPercentage: tip,
+                                                          withTipPercentage: tip.value,
                                                           dividedBetween: totalPeople.value)
         else {
             showTotal = false
@@ -154,7 +155,7 @@ final class WeSplitPresentationTests: XCTestCase {
         assert(sut, showTotal: false)
         
         sut.checkTotal = "100"
-        sut.tip = 10
+        sut.tip.value = 10
         sut.totalPeople.value = 3
         
         XCTAssertEqual(
