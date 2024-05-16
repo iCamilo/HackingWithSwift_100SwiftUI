@@ -22,7 +22,7 @@ struct TotalPeopleOption {
     }
 }
 
-struct WeSplitViewModel {
+struct TipTotalResult {
     private let tipFormatter: NumberFormatter = {
         let resultFormatter = NumberFormatter()
         resultFormatter.numberStyle = .decimal
@@ -34,6 +34,24 @@ struct WeSplitViewModel {
         return resultFormatter
     }()
     
+    private let tipTotal: TipTotal
+    
+    init(tipTotal: TipTotal) {
+        self.tipTotal = tipTotal
+    }
+    
+    var tipOverTotal: String {
+        return "Tip Over Total: $\(tipFormatter.string(from: tipTotal.tipOverTotal))"
+    }
+    var tipPlusTip: String {
+        return "Tip plus Tip: $\(tipFormatter.string(from: tipTotal.totalPlusTip))"
+    }
+    var totalPerPerson: String {
+        return "Total per Person: $\(tipFormatter.string(from: tipTotal.totalPerPerson))"
+    }
+}
+
+struct WeSplitViewModel {
     private let tipCalculator: TipCalculator
     private(set) var tipOptions: [TipOption]
     
@@ -60,35 +78,22 @@ struct WeSplitViewModel {
         }
     }
     
-    private var tipTotal: TipTotal?
+    private(set) var tipTotalResult: TipTotalResult?
     var showTotal: Bool {
-        tipTotal != nil
-    }
-    var tipOverTotal: String {
-        guard let tipTotal else { return "" }
-        return "Tip Over Total: $\(tipFormatter.string(from: tipTotal.tipOverTotal))"
-    }
-    var tipPlusTip: String {
-        guard let tipTotal else { return "" }
-        return "Tip plus Tip: $\(tipFormatter.string(from: tipTotal.totalPlusTip))"
-    }
-    var totalPerPerson: String {
-        guard let tipTotal else { return "" }
-        return "Total per Person: $\(tipFormatter.string(from: tipTotal.totalPerPerson))"
+        tipTotalResult != nil
     }
     
     private mutating func calculateTip() {
-        guard let checkTotal = tipFormatter.double(from: checkTotal) else {
-            self.tipTotal = nil
+        guard let checkTotal = Double(checkTotal),
+              let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal,
+                                                          withTipPercentage: tip.value,
+                                                          dividedBetween: totalPeople.value)
+        else {
+            tipTotalResult = nil
             return
         }
-        
-        
-        self.tipTotal = try? tipCalculator.calculate(
-            forCheckTotal: checkTotal,
-            withTipPercentage: tip.value,
-            dividedBetween: totalPeople.value
-        )
+                
+        tipTotalResult = .init(tipTotal: tipTotal)
     }
 }
 
@@ -174,9 +179,9 @@ final class WeSplitPresentationTests: XCTestCase {
         )
         
         assert(sut, showTotal: true)
-        XCTAssertEqual(sut.tipOverTotal, "Tip Over Total: $10.00")
-        XCTAssertEqual(sut.tipPlusTip, "Tip plus Tip: $100.10")
-        XCTAssertEqual(sut.totalPerPerson, "Total per Person: $33.37")
+        XCTAssertEqual(sut.tipTotalResult?.tipOverTotal, "Tip Over Total: $10.00")
+        XCTAssertEqual(sut.tipTotalResult?.tipPlusTip, "Tip plus Tip: $100.10")
+        XCTAssertEqual(sut.tipTotalResult?.totalPerPerson, "Total per Person: $33.37")
     }
     
     
@@ -196,15 +201,22 @@ final class WeSplitPresentationTests: XCTestCase {
         XCTAssertEqual(sut.showTotal, showTotal,
                        "Should \(showTotal ? "" : "NOT") show Total",
                        file: file, line: line)
-        XCTAssertEqual(sut.tipOverTotal.isEmpty, !showTotal,
-                       "Tip over Total should \(showTotal ? "NOT" : "") be empty",
-                       file: file, line: line)
-        XCTAssertEqual(sut.tipPlusTip.isEmpty, !showTotal,
-                       "Tip plus Tip should \(showTotal ? "NOT" : "") be empty",
-                       file: file, line: line)
-        XCTAssertEqual(sut.totalPerPerson.isEmpty, !showTotal,
-                       "Tip total per person should \(showTotal ? "NOT" : "") be empty",
-                       file: file, line: line)
+        
+        if !showTotal {
+            XCTAssertNil(sut.tipTotalResult,
+                         "Tip total results should be nil when total is not showing",
+                         file: file, line: line)
+        } else {
+            XCTAssertEqual(sut.tipTotalResult?.tipOverTotal.isEmpty, false,
+                           "Tip over Total should NOT be empty",
+                           file: file, line: line)
+            XCTAssertEqual(sut.tipTotalResult?.tipPlusTip.isEmpty, false,
+                           "Tip plus Tip should NOT be empty",
+                           file: file, line: line)
+            XCTAssertEqual(sut.tipTotalResult?.totalPerPerson.isEmpty, false,
+                           "Tip total per person should NOT be empty",
+                           file: file, line: line)
+        }
     }
     
     final class TipCalculatorSpy: TipCalculator {
