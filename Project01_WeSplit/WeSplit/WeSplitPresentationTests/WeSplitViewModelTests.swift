@@ -87,7 +87,7 @@ final class WeSplitViewModelTests: XCTestCase {
         sut?.totalPeople.value = 3
         
         XCTAssertEqual(
-            calculator.messages,
+            calculator.calculateMessages,
             [.calculate(checkTotal: 100, tip: 0, partySize: 1),
              .calculate(checkTotal: 100, tip: 10, partySize: 1),
              .calculate(checkTotal: 100, tip: 10, partySize: 3)],
@@ -100,19 +100,32 @@ final class WeSplitViewModelTests: XCTestCase {
         XCTAssertEqual(sut?.tipTotalResult?.totalPerPerson, "Total per Person: $33.37")
     }
     
+    func test_changeTipOption_shouldRateTip() {
+        var (sut, rater) = makeSUT()
+        
+        sut?.tip.value = 0
+        sut?.tip.value = 10
+        sut?.tip.value = 50
+        
+        XCTAssertEqual(rater.rateMessages,
+                       [.rate(tip: 0),
+                        .rate(tip: 10),
+                        .rate(tip: 50)])
+    }
     
     // MARK: - Utils
-    func makeSUT(tipOptions: [TipOption] = [.init(value: 100)], maxPartySize: UInt = 1) -> (sut: WeSplitViewModel?, tipCalculator: TipCalculatorSpy) {
-        let tipCalculator = TipCalculatorSpy()
-        let sut = WeSplitViewModel(tipCalculator: tipCalculator,
+    func makeSUT(tipOptions: [TipOption] = [.init(value: 100)], maxPartySize: UInt = 1) -> (sut: WeSplitViewModel?, tipCalculator: TipCalculatorAndRaterSpy) {
+        let tipCalculatorAndRater = TipCalculatorAndRaterSpy()
+        let sut = WeSplitViewModel(tipCalculator: tipCalculatorAndRater,
+                                   tipRater: tipCalculatorAndRater,
                                    tipOptions: tipOptions,
                                    maxPartySize: maxPartySize)
         
-        tipCalculator.makeCalculateSucceed(with: TipTotal(tipOverTotal: 0,
+        tipCalculatorAndRater.makeCalculateSucceed(with: TipTotal(tipOverTotal: 0,
                                                           totalPlusTip: 0,
                                                           totalPerPerson: 0))
         
-        return (sut, tipCalculator)
+        return (sut, tipCalculatorAndRater)
     }
     
     private func assert(_ sut: WeSplitViewModel?, showTotal: Bool, file: StaticString = #filePath, line: UInt = #line) {
@@ -137,18 +150,21 @@ final class WeSplitViewModelTests: XCTestCase {
         }
     }
     
-    final class TipCalculatorSpy: TipCalculator {
+    final class TipCalculatorAndRaterSpy: TipCalculator, TipRater {
         enum Message: Equatable {
+            case rate(tip: UInt)
             case calculate(checkTotal: Double, tip: UInt, partySize: UInt)
         }
         
+        // MARK: - TipCalculator
+        
         private var tipTotal: TipTotal?
-        private(set) var messages = [Message]()
+        private(set) var calculateMessages = [Message]()
         
         func calculate(forCheckTotal checkTotal: Double,
                        withTipPercentage tipPercentage: UInt,
                        dividedBetween partySize: UInt) throws -> WeSplitTipCalculator.TipTotal {
-            messages.append(.calculate(checkTotal: checkTotal, tip: tipPercentage, partySize: partySize))
+            calculateMessages.append(.calculate(checkTotal: checkTotal, tip: tipPercentage, partySize: partySize))
             
             guard let tipTotal = tipTotal  else {
                 throw NSError(domain: "Test - Calculator Spy Failed", code: 0)
@@ -163,6 +179,15 @@ final class WeSplitViewModelTests: XCTestCase {
         
         func makeCalculateFail() {
             self.tipTotal = nil
+        }
+        
+        // MARK: - TipRater
+        
+        private(set) var rateMessages = [Message]()
+        
+        func rate(tip: UInt) -> WeSplitTipCalculator.TipRate {
+            rateMessages.append(.rate(tip: tip))
+            return .low
         }
     }
 }

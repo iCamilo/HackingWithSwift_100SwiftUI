@@ -6,6 +6,7 @@ import Foundation
 import WeSplitTipCalculator
 
 public struct WeSplitViewModel {
+    private let tipRater: TipRater
     private let tipCalculator: TipCalculator
     public private(set) var tipOptions: [TipOption]
     public private(set) var totalPeopleRange: ClosedRange<Int>
@@ -14,13 +15,14 @@ public struct WeSplitViewModel {
     ///
     /// - Precondition: `maxPartySize` should be greater than one
     /// - Precondition:  `tipOptions` should not be empty
-    public init?(tipCalculator: TipCalculator, tipOptions: [TipOption], maxPartySize: UInt) {
+    public init?(tipCalculator: TipCalculator, tipRater: TipRater, tipOptions: [TipOption], maxPartySize: UInt) {
         guard maxPartySize >= 1,
             !tipOptions.isEmpty
         else {
             return nil
         }
         
+        self.tipRater = tipRater
         self.tipCalculator = tipCalculator
         self.tipOptions = tipOptions
         self.totalPeople = .init(value: 1)
@@ -36,6 +38,7 @@ public struct WeSplitViewModel {
     public var tip: TipOption {
         didSet {
             calculateTip()
+            rateTip()
         }
     }
     public var totalPeople: TotalPeopleOption {
@@ -60,5 +63,9 @@ public struct WeSplitViewModel {
         }
                 
         tipTotalResult = .init(tipTotal: tipTotal)
+    }
+    
+    private func rateTip() {
+        _ = tipRater.rate(tip: tip.value)
     }
 }
