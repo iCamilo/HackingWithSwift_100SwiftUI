@@ -100,19 +100,29 @@ final class WeSplitViewModelTests: XCTestCase {
         XCTAssertEqual(sut?.tipTotalResult?.totalPerPerson, "Total per Person: $33.37")
     }
     
-    func test_changeTipOption_shouldRateTip() {
+    func test_changeTipOption_shouldRateTipAndUpdateTipRateResult() {
         var (sut, rater) = makeSUT()
         
+        rater.completeRate(with: .low)
         sut?.tip.value = 0
-        sut?.tip.value = 10
-        sut?.tip.value = 50
+        XCTAssertEqual(rater.rateMessages, [.rate(tip: 0)])
+        XCTAssertEqual(sut?.tipRateResult, .red)
         
-        XCTAssertEqual(rater.rateMessages,
-                       [.rate(tip: 0),
-                        .rate(tip: 10),
-                        .rate(tip: 50)])
+        rater.completeRate(with: .good)
+        sut?.tip.value = 10
+        XCTAssertEqual(rater.rateMessages, [.rate(tip: 0),
+                                            .rate(tip: 10)])
+        XCTAssertEqual(sut?.tipRateResult, .blue)
+                        
+        
+        rater.completeRate(with: .excellent)
+        sut?.tip.value = 50
+        XCTAssertEqual(rater.rateMessages, [.rate(tip: 0),
+                                            .rate(tip: 10),
+                                            .rate(tip: 50)])
+        XCTAssertEqual(sut?.tipRateResult, .green)
     }
-    
+            
     // MARK: - Utils
     func makeSUT(tipOptions: [TipOption] = [.init(value: 100)], maxPartySize: UInt = 1) -> (sut: WeSplitViewModel?, tipCalculator: TipCalculatorAndRaterSpy) {
         let tipCalculatorAndRater = TipCalculatorAndRaterSpy()
@@ -150,6 +160,8 @@ final class WeSplitViewModelTests: XCTestCase {
         }
     }
     
+    // MARK: - TipCalculatorAndRaterSpy
+    
     final class TipCalculatorAndRaterSpy: TipCalculator, TipRater {
         enum Message: Equatable {
             case rate(tip: UInt)
@@ -183,11 +195,16 @@ final class WeSplitViewModelTests: XCTestCase {
         
         // MARK: - TipRater
         
+        var tipRate: TipRate = .low
         private(set) var rateMessages = [Message]()
         
         func rate(tip: UInt) -> WeSplitTipCalculator.TipRate {
             rateMessages.append(.rate(tip: tip))
-            return .low
+            return tipRate
+        }
+        
+        func completeRate(with tipRate: WeSplitTipCalculator.TipRate) {
+            self.tipRate = tipRate
         }
     }
 }

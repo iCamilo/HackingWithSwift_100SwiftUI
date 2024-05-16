@@ -65,7 +65,22 @@ public struct WeSplitViewModel {
         tipTotalResult = .init(tipTotal: tipTotal)
     }
     
-    private func rateTip() {
-        _ = tipRater.rate(tip: tip.value)
+    public enum TipRateResult: Equatable {
+        case red
+        case blue
+        case green
+    }
+    
+    public var tipRateResult: TipRateResult = .red
+    
+    private mutating func rateTip() {
+        switch tipRater.rate(tip: tip.value) {
+        case .low:
+            tipRateResult = .red
+        case .good:
+            tipRateResult = .blue
+        case .excellent:
+            tipRateResult = .green
+        }
     }
 }
