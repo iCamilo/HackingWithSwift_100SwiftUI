@@ -2,7 +2,7 @@
 // Copyright ©️ 2024 Iván Camilo Fuertes. All rights reserved.
 
 import XCTest
-import TipCalculator
+import WeSplitTipCalculator
 
 final class RateTipTests: XCTestCase {
     func test_rateTip() {

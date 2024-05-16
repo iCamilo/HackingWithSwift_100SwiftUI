@@ -3,7 +3,7 @@
 
 
 import XCTest
-import TipCalculator
+import WeSplitTipCalculator
 
 final class CalculateTipsTests: XCTestCase {
             
