@@ -176,11 +176,11 @@
 				5BC5FE222BEBD843005A000F /* TipCalculatorTests */,
 				5BC5FE422BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE4C2BEC24BE005A000F /* WeSplitPresentationTests */,
-				5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */,
-				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
 				5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */,
 				5B3721AB2BF6C189000EF7D7 /* WeSplit-iOS */,
 				5B3721B82BF6C19B000EF7D7 /* Frameworks */,
+				5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */,
+				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
 			);
 			sourceTree = "<group>";
 		};
