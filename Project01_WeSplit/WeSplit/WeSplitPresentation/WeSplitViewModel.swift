@@ -9,7 +9,7 @@ public struct WeSplitViewModel {
     private let tipRater: TipRater
     private let tipCalculator: TipCalculator
     public private(set) var tipOptions: [TipOption]
-    public private(set) var totalPeopleRange: ClosedRange<Int>
+    public private(set) var totalPeopleRange: ClosedRange<UInt>
     
     ///  ViewModel used to capture the required data to calculate a check tip. Tip calculation results are stored in `tipTotalResult`
     ///
@@ -32,7 +32,7 @@ public struct WeSplitViewModel {
         self.tipOptions = tipOptions
         self.totalPeople = .init(value: 1)
         self.tip = tipOptions.first ?? .init(value: 0)
-        self.totalPeopleRange = 1...Int(maxPartySize)
+        self.totalPeopleRange = 1...maxPartySize
     }
     
     public var checkTotal: String = "" {

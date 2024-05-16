@@ -23,7 +23,7 @@ struct WeSplitView: View {
                 
                 Section(header: sectionTitle("How many people attend?"))
                 {
-                    Stepper(value: $viewModel.totalPeople.value, in: 1...5) {
+                    Stepper(value: $viewModel.totalPeople.value, in: viewModel.totalPeopleRange) {
                         Text(viewModel.totalPeople.description)
                     }
                 }
@@ -76,7 +76,7 @@ struct WeSplitView_Previews: PreviewProvider {
         let viewModel = WeSplitViewModel(tipCalculator: mockCalculatorAndRater,
                                          tipRater: mockCalculatorAndRater,
                                          tipOptions: tipOptions,
-                                         maxPartySize: 5)
+                                         maxPartySize: 15)
                 
         return WeSplitView(viewModel: viewModel!)
     }        
