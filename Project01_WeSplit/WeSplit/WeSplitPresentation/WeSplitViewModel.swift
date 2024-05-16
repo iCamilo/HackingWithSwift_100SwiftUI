@@ -73,13 +73,7 @@ public struct WeSplitViewModel {
     }
     
     // MARK: - Rate Tip
-    
-    public enum TipRateResult: Equatable {
-        case red
-        case blue
-        case green
-    }
-    
+        
     public var tipRateResult: TipRateResult = .red
     
     private mutating func rateTip() {

@@ -30,6 +30,7 @@
 		5BC5FE5E2BF6B1BE005A000F /* TipOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */; };
 		5BC5FE602BF6B1D5005A000F /* TotalPeopleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */; };
 		5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */; };
+		5BC5FE642BF6BB27005A000F /* TipRateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE632BF6BB27005A000F /* TipRateResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
 		5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPeopleOption.swift; sourceTree = "<group>"; };
 		5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotalResult.swift; sourceTree = "<group>"; };
+		5BC5FE632BF6BB27005A000F /* TipRateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRateResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */,
 				5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */,
 				5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */,
+				5BC5FE632BF6BB27005A000F /* TipRateResult.swift */,
 			);
 			path = WeSplitPresentation;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			files = (
 				5BC5FE5E2BF6B1BE005A000F /* TipOption.swift in Sources */,
 				5BC5FE602BF6B1D5005A000F /* TotalPeopleOption.swift in Sources */,
+				5BC5FE642BF6BB27005A000F /* TipRateResult.swift in Sources */,
 				5BC5FE5C2BF6AFBA005A000F /* WeSplitViewModel.swift in Sources */,
 				5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */,
 			);
