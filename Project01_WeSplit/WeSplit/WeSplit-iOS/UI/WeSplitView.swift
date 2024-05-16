@@ -7,61 +7,10 @@
 //
 
 import SwiftUI
-
-struct ViewModel {
-    var checkTotal: String = "" {
-        didSet {
-            calculateTotal()
-        }
-    }
-    var tipPecentage: Int = 0 {
-        didSet {
-            calculateTotal()
-        }
-    }
-    var numberOfpeople: Int  = 1 {
-        didSet {
-            calculateTotal()
-        }
-    }
-    var showTotal: Bool = false
-    
-    var tipOverTotal: String = ""
-    var totalPlusTip: String = ""
-    var totalPerPerson: String = ""
-    
-    private(set) var tipOptions: [UInt]
-    
-    init(tips: [UInt]) {
-        self.tipOptions = tips
-    }
-    
-    mutating private func calculateTotal() {
-        guard let total = Double(checkTotal) else {
-            showTotal = false
-            return
-        }
-        
-        let tipOverTotal = total * Double(self.tipOptions[tipPecentage]) / 100
-        let totalPlusTip = total + tipOverTotal
-        let totalPerPerson = totalPlusTip / Double(numberOfpeople)
-        
-        showTotal = true
-        self.tipOverTotal = "Tip Over Total: $\(tipOverTotal)"
-        self.totalPlusTip = "Total Plus Tip: $\(totalPlusTip)"
-        self.totalPerPerson = "Total Per Person: $\(totalPerPerson)"
-    }
-}
+import WeSplitPresentation
 
 struct WeSplitView: View {
-    @State var viewModel: ViewModel = ViewModel(tips: [0, 10, 15, 20, 25, 50])
-    /*
-    private let tipOptions = [0, 10, 15, 50]
-    
-    @State private var checkTotal = ""
-    @State private var numberOfpeople: Int = 2
-    @State private var tipPecentage: Int = 0
-     **/
+    @State var viewModel: WeSplitViewModel
     
     var body: some View {
         NavigationView {
@@ -74,16 +23,16 @@ struct WeSplitView: View {
                 
                 Section(header: sectionTitle("How many people attend?"))
                 {
-                    Stepper(value: $viewModel.numberOfpeople, in: 1...10) {
-                        Text("\(viewModel.numberOfpeople)")
+                    Stepper(value: $viewModel.totalPeople.value, in: 1...5) {
+                        Text(viewModel.totalPeople.description)
                     }
                 }
                 
                 Section(header: sectionTitle("What about the tip?"))
                 {
-                    Picker("Tip", selection: $viewModel.tipPecentage) {
-                        ForEach(viewModel.tipOptions.indices, id:\.self) {
-                            Text("\(viewModel.tipOptions[$0])")
+                    Picker("Tip", selection: $viewModel.tip.value) {
+                        ForEach(viewModel.tipOptions, id:\.self.value) {
+                            Text($0.description)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -92,15 +41,25 @@ struct WeSplitView: View {
                 if viewModel.showTotal {
                     Section(header: HeaderTitle(title: "TOTAL"))
                     {
-                        Text(viewModel.tipOverTotal)
-                        Text(viewModel.totalPlusTip)
-                        Text(viewModel.totalPerPerson)
+                        Text(viewModel.tipTotalResult?.tipOverTotal ?? "")
+                        Text(viewModel.tipTotalResult?.tipPlusTip ?? "")
+                        Text(viewModel.tipTotalResult?.totalPerPerson ?? "")
                     }
-                    
-                    .foregroundColor(viewModel.tipPecentage == 0 ? .red : viewModel.tipPecentage > 2 ? .green : .blue )
+                    .foregroundColor(showTotalForegroundColor)
                 }
             }
             .navigationBarTitle("We Split")
+        }
+    }
+    
+    private var showTotalForegroundColor: Color {
+        switch viewModel.tipRateResult {
+        case .red:
+            return Color.red
+        case .blue:
+            return Color.blue
+        case .green:
+            return Color.green
         }
     }
     
@@ -109,26 +68,18 @@ struct WeSplitView: View {
     }
 }
 
-private extension WeSplitView {
-    
-    /**
-    func calculateTotal() -> (tipOverTotal: Double, totalPlusTip: Double, totalPerPerson: Double) {
-        guard let total = Double(checkTotal) else {
-            return (0, 0, 0)
-        }
-        
-        let tipOverTotal = total * Double(self.tipOptions[tipPecentage]) / 100
-        let totalPlusTip = total + tipOverTotal
-        let totalPerPerson = totalPlusTip / Double(numberOfpeople)
-        
-        return (tipOverTotal, totalPlusTip, totalPerPerson)
-    }
-     */
-    
-}
-
 struct WeSplitView_Previews: PreviewProvider {
     static var previews: some View {
-        WeSplitView()
-    }
+        let mockCalculatorAndRater = PreviewsCalculatorAndRater()
+        let tipOptions = [TipOption(value: 0), TipOption(value: 50)]
+        
+        let viewModel = WeSplitViewModel(tipCalculator: mockCalculatorAndRater,
+                                         tipRater: mockCalculatorAndRater,
+                                         tipOptions: tipOptions,
+                                         maxPartySize: 5)
+                
+        return WeSplitView(viewModel: viewModel!)
+    }        
 }
+
+
