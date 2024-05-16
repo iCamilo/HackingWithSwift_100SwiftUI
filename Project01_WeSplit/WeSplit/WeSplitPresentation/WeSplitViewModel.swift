@@ -15,7 +15,12 @@ public struct WeSplitViewModel {
     ///
     /// - Precondition: `maxPartySize` should be greater than one
     /// - Precondition:  `tipOptions` should not be empty
-    public init?(tipCalculator: TipCalculator, tipRater: TipRater, tipOptions: [TipOption], maxPartySize: UInt) {
+    public init?(
+        tipCalculator: TipCalculator,
+        tipRater: TipRater,
+        tipOptions: [TipOption],
+        maxPartySize: UInt
+    ) {
         guard maxPartySize >= 1,
             !tipOptions.isEmpty
         else {
@@ -47,6 +52,8 @@ public struct WeSplitViewModel {
         }
     }
     
+    // MARK: - Calculate Tip
+    
     public private(set) var tipTotalResult: TipTotalResult?
     public var showTotal: Bool {
         tipTotalResult != nil
@@ -64,6 +71,8 @@ public struct WeSplitViewModel {
                 
         tipTotalResult = .init(tipTotal: tipTotal)
     }
+    
+    // MARK: - Rate Tip
     
     public enum TipRateResult: Equatable {
         case red
