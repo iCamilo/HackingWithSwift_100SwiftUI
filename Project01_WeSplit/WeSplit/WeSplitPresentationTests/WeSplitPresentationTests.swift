@@ -23,7 +23,7 @@ struct TotalPeopleOption {
 }
 
 struct WeSplitViewModel {
-    private lazy var tipFormatter: NumberFormatter = {
+    private let tipFormatter: NumberFormatter = {
         let resultFormatter = NumberFormatter()
         resultFormatter.numberStyle = .decimal
         resultFormatter.minimumFractionDigits = 2
@@ -59,29 +59,36 @@ struct WeSplitViewModel {
             calculateTip()
         }
     }
-    var showTotal: Bool = false
     
-    var tipOverTotal: String = ""
-    var tipPlusTip: String = ""
-    var totalPerPerson: String = ""
+    private var tipTotal: TipTotal?
+    var showTotal: Bool {
+        tipTotal != nil
+    }
+    var tipOverTotal: String {
+        guard let tipTotal else { return "" }
+        return "Tip Over Total: $\(tipFormatter.string(from: tipTotal.tipOverTotal))"
+    }
+    var tipPlusTip: String {
+        guard let tipTotal else { return "" }
+        return "Tip plus Tip: $\(tipFormatter.string(from: tipTotal.totalPlusTip))"
+    }
+    var totalPerPerson: String {
+        guard let tipTotal else { return "" }
+        return "Total per Person: $\(tipFormatter.string(from: tipTotal.totalPerPerson))"
+    }
     
     private mutating func calculateTip() {
-        guard let checkTotal = tipFormatter.double(from: checkTotal),
-              let tipTotal = try? tipCalculator.calculate(forCheckTotal: checkTotal,
-                                                          withTipPercentage: tip.value,
-                                                          dividedBetween: totalPeople.value)
-        else {
-            showTotal = false
-            tipOverTotal = ""
-            tipPlusTip = ""
-            totalPerPerson = ""
+        guard let checkTotal = tipFormatter.double(from: checkTotal) else {
+            self.tipTotal = nil
             return
         }
         
-        showTotal = true
-        tipOverTotal = "Tip Over Total: $\(tipFormatter.string(from: tipTotal.tipOverTotal))"
-        tipPlusTip = "Tip plus Tip: $\(tipFormatter.string(from: tipTotal.totalPlusTip))"
-        totalPerPerson = "Total per Person: $\(tipFormatter.string(from: tipTotal.totalPerPerson))"
+        
+        self.tipTotal = try? tipCalculator.calculate(
+            forCheckTotal: checkTotal,
+            withTipPercentage: tip.value,
+            dividedBetween: totalPeople.value
+        )
     }
 }
 
