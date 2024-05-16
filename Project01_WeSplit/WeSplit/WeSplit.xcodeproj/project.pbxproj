@@ -26,6 +26,10 @@
 		5BC5FE492BEC24BE005A000F /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */; };
 		5BC5FE4E2BEC24BE005A000F /* WeSplitPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE4D2BEC24BE005A000F /* WeSplitPresentationTests.swift */; };
 		5BC5FE4F2BEC24BE005A000F /* WeSplitPresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BC5FE5C2BF6AFBA005A000F /* WeSplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */; };
+		5BC5FE5E2BF6B1BE005A000F /* TipOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */; };
+		5BC5FE602BF6B1D5005A000F /* TotalPeopleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */; };
+		5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitPresentation.h; sourceTree = "<group>"; };
 		5BC5FE482BEC24BE005A000F /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC5FE4D2BEC24BE005A000F /* WeSplitPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitPresentationTests.swift; sourceTree = "<group>"; };
+		5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitViewModel.swift; sourceTree = "<group>"; };
+		5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
+		5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPeopleOption.swift; sourceTree = "<group>"; };
+		5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotalResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +247,10 @@
 			isa = PBXGroup;
 			children = (
 				5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */,
+				5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */,
+				5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */,
+				5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */,
+				5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */,
 			);
 			path = WeSplitPresentation;
 			sourceTree = "<group>";
@@ -385,6 +397,7 @@
 					};
 					5BC5FE402BEC24BE005A000F = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					5BC5FE472BEC24BE005A000F = {
 						CreatedOnToolsVersion = 15.2;
@@ -491,6 +504,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC5FE5E2BF6B1BE005A000F /* TipOption.swift in Sources */,
+				5BC5FE602BF6B1D5005A000F /* TotalPeopleOption.swift in Sources */,
+				5BC5FE5C2BF6AFBA005A000F /* WeSplitViewModel.swift in Sources */,
+				5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -864,6 +882,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -875,6 +894,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -914,6 +934,7 @@
 		5BC5FE542BEC24BE005A000F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -938,6 +959,7 @@
 		5BC5FE552BEC24BE005A000F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
