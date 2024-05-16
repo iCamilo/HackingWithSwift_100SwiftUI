@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3721AD2BF6C189000EF7D7 /* WeSplit_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721AC2BF6C189000EF7D7 /* WeSplit_iOSApp.swift */; };
+		5B3721B12BF6C18B000EF7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */; };
+		5B3721B42BF6C18B000EF7D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3721B32BF6C18B000EF7D7 /* Preview Assets.xcassets */; };
+		5B3721B92BF6C19B000EF7D7 /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; };
+		5B3721BA2BF6C19B000EF7D7 /* WeSplitPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3721BE2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
+		5B3721BF2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3721C22BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
+		5B3721C32BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3721CB2BF6C4F5000EF7D7 /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */; };
+		5B3721CD2BF6C4F5000EF7D7 /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */; };
 		5BC5FE242BEBD843005A000F /* CalculateTipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */; };
 		5BC5FE252BEBD843005A000F /* WeSplitTipCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */; };
@@ -24,6 +35,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B3721BB2BF6C19B000EF7D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC5FE402BEC24BE005A000F;
+			remoteInfo = WeSplitPresentation;
+		};
+		5B3721C02BF6C1E1000EF7D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC5FE162BEBD843005A000F;
+			remoteInfo = WeSplitTipCalculator;
+		};
+		5B3721C42BF6C4B7000EF7D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC5FE162BEBD843005A000F;
+			remoteInfo = WeSplitTipCalculator;
+		};
 		5BC5FE202BEBD843005A000F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
@@ -40,19 +72,51 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B3721BD2BF6C19B000EF7D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B3721BA2BF6C19B000EF7D7 /* WeSplitPresentation.framework in Embed Frameworks */,
+				5B3721BF2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3721C62BF6C4B7000EF7D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B3721C32BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WeSplitTipCalculator.framework; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitTipCalculator.framework; sourceTree = "<absolute>"; };
+		5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitTipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3721A32BF6C118000EF7D7 /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitTipCalculatorTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitTipCalculatorTests.xctest; sourceTree = "<absolute>"; };
+		5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3721A52BF6C118000EF7D7 /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitPresentationTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitPresentationTests.xctest; sourceTree = "<absolute>"; };
+		5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeSplit-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3721AC2BF6C189000EF7D7 /* WeSplit_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplit_iOSApp.swift; sourceTree = "<group>"; };
+		5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B3721B32BF6C18B000EF7D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
+		5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitTipCalculator.h; sourceTree = "<group>"; };
-		5BC5FE1E2BEBD843005A000F /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitTipCalculatorTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitTipCalculatorTests.xctest; sourceTree = "<absolute>"; };
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
 		5BC5FE312BEBEFFC005A000F /* CalculateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTip.swift; sourceTree = "<group>"; };
 		5BC5FE332BEC0285005A000F /* RateTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTipTests.swift; sourceTree = "<group>"; };
 		5BC5FE352BEC0883005A000F /* RateTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTip.swift; sourceTree = "<group>"; };
 		5BC5FE372BEC094F005A000F /* TipRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRate.swift; sourceTree = "<group>"; };
-		5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WeSplitPresentation.framework; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitPresentation.framework; sourceTree = "<absolute>"; };
 		5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitPresentation.h; sourceTree = "<group>"; };
-		5BC5FE482BEC24BE005A000F /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitPresentationTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitPresentationTests.xctest; sourceTree = "<absolute>"; };
 		5BC5FE4D2BEC24BE005A000F /* WeSplitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitViewModelTests.swift; sourceTree = "<group>"; };
 		5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitViewModel.swift; sourceTree = "<group>"; };
 		5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
@@ -62,6 +126,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B3721A72BF6C189000EF7D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3721B92BF6C19B000EF7D7 /* WeSplitPresentation.framework in Frameworks */,
+				5B3721BE2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BC5FE142BEBD843005A000F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3721C22BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +174,47 @@
 				5BC5FE222BEBD843005A000F /* TipCalculatorTests */,
 				5BC5FE422BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE4C2BEC24BE005A000F /* WeSplitPresentationTests */,
+				5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */,
+				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
+				5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */,
+				5B3721AB2BF6C189000EF7D7 /* WeSplit-iOS */,
+				5B3721B82BF6C19B000EF7D7 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		5B3721AB2BF6C189000EF7D7 /* WeSplit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B3721C72BF6C4F5000EF7D7 /* UI */,
+				5B3721AC2BF6C189000EF7D7 /* WeSplit_iOSApp.swift */,
+				5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */,
+				5B3721B22BF6C18B000EF7D7 /* Preview Content */,
+			);
+			path = "WeSplit-iOS";
+			sourceTree = "<group>";
+		};
+		5B3721B22BF6C18B000EF7D7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5B3721B32BF6C18B000EF7D7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B3721B82BF6C19B000EF7D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B3721C72BF6C4F5000EF7D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */,
+				5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		5BC5FE182BEBD843005A000F /* WeSplitTipCalculator */ = {
@@ -199,6 +313,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5B3721A92BF6C189000EF7D7 /* WeSplit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B3721B52BF6C18B000EF7D7 /* Build configuration list for PBXNativeTarget "WeSplit-iOS" */;
+			buildPhases = (
+				5B3721A62BF6C189000EF7D7 /* Sources */,
+				5B3721A72BF6C189000EF7D7 /* Frameworks */,
+				5B3721A82BF6C189000EF7D7 /* Resources */,
+				5B3721BD2BF6C19B000EF7D7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B3721BC2BF6C19B000EF7D7 /* PBXTargetDependency */,
+				5B3721C12BF6C1E1000EF7D7 /* PBXTargetDependency */,
+			);
+			name = "WeSplit-iOS";
+			productName = "WeSplit-iOS";
+			productReference = 5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC5FE262BEBD843005A000F /* Build configuration list for PBXNativeTarget "WeSplitTipCalculator" */;
@@ -214,7 +348,7 @@
 			);
 			name = WeSplitTipCalculator;
 			productName = TipCalculator;
-			productReference = 5BC5FE172BEBD843005A000F /* WeSplitTipCalculator.framework */;
+			productReference = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BC5FE1D2BEBD843005A000F /* WeSplitTipCalculatorTests */ = {
@@ -232,7 +366,7 @@
 			);
 			name = WeSplitTipCalculatorTests;
 			productName = TipCalculatorTests;
-			productReference = 5BC5FE1E2BEBD843005A000F /* WeSplitTipCalculatorTests.xctest */;
+			productReference = 5B3721A32BF6C118000EF7D7 /* WeSplitTipCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5BC5FE402BEC24BE005A000F /* WeSplitPresentation */ = {
@@ -243,14 +377,16 @@
 				5BC5FE3D2BEC24BE005A000F /* Sources */,
 				5BC5FE3E2BEC24BE005A000F /* Frameworks */,
 				5BC5FE3F2BEC24BE005A000F /* Resources */,
+				5B3721C62BF6C4B7000EF7D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B3721C52BF6C4B7000EF7D7 /* PBXTargetDependency */,
 			);
 			name = WeSplitPresentation;
 			productName = WeSplitPresentation;
-			productReference = 5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */;
+			productReference = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BC5FE472BEC24BE005A000F /* WeSplitPresentationTests */ = {
@@ -268,7 +404,7 @@
 			);
 			name = WeSplitPresentationTests;
 			productName = WeSplitPresentationTests;
-			productReference = 5BC5FE482BEC24BE005A000F /* WeSplitPresentationTests.xctest */;
+			productReference = 5B3721A52BF6C118000EF7D7 /* WeSplitPresentationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -281,6 +417,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Ivan Fuertes";
 				TargetAttributes = {
+					5B3721A92BF6C189000EF7D7 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					5BC5FE162BEBD843005A000F = {
 						CreatedOnToolsVersion = 15.2;
 						LastSwiftMigration = 1520;
@@ -314,11 +453,21 @@
 				5BC5FE1D2BEBD843005A000F /* WeSplitTipCalculatorTests */,
 				5BC5FE402BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE472BEC24BE005A000F /* WeSplitPresentationTests */,
+				5B3721A92BF6C189000EF7D7 /* WeSplit-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B3721A82BF6C189000EF7D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3721B42BF6C18B000EF7D7 /* Preview Assets.xcassets in Resources */,
+				5B3721B12BF6C18B000EF7D7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BC5FE152BEBD843005A000F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +499,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5B3721A62BF6C189000EF7D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3721CD2BF6C4F5000EF7D7 /* WeSplitView.swift in Sources */,
+				5B3721CB2BF6C4F5000EF7D7 /* HeaderTitle.swift in Sources */,
+				5B3721AD2BF6C189000EF7D7 /* WeSplit_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BC5FE132BEBD843005A000F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +552,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5B3721BC2BF6C19B000EF7D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC5FE402BEC24BE005A000F /* WeSplitPresentation */;
+			targetProxy = 5B3721BB2BF6C19B000EF7D7 /* PBXContainerItemProxy */;
+		};
+		5B3721C12BF6C1E1000EF7D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
+			targetProxy = 5B3721C02BF6C1E1000EF7D7 /* PBXContainerItemProxy */;
+		};
+		5B3721C52BF6C4B7000EF7D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
+			targetProxy = 5B3721C42BF6C4B7000EF7D7 /* PBXContainerItemProxy */;
+		};
 		5BC5FE212BEBD843005A000F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
@@ -517,6 +691,87 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B3721B62BF6C18B000EF7D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WeSplit-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = J7FJ227YZA;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iCamilo.WeSplit-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5B3721B72BF6C18B000EF7D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WeSplit-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = J7FJ227YZA;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iCamilo.WeSplit-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -814,6 +1069,15 @@
 			buildConfigurations = (
 				5B1457282443E9E2001BC8BD /* Debug */,
 				5B1457292443E9E2001BC8BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B3721B52BF6C18B000EF7D7 /* Build configuration list for PBXNativeTarget "WeSplit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3721B62BF6C18B000EF7D7 /* Debug */,
+				5B3721B72BF6C18B000EF7D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
