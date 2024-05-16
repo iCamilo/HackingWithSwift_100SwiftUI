@@ -6,7 +6,7 @@ import XCTest
 import WeSplitTipCalculator
 import WeSplitPresentation
 
-final class WeSplitPresentationTests: XCTestCase {
+final class WeSplitViewModelTests: XCTestCase {
     
     func test_initWithPartySizeZero_shouldFail() {
         var (sut, _) = makeSUT(maxPartySize: 0)

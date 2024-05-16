@@ -24,7 +24,7 @@
 		5BC5FE362BEC0883005A000F /* RateTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE352BEC0883005A000F /* RateTip.swift */; };
 		5BC5FE382BEC094F005A000F /* TipRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE372BEC094F005A000F /* TipRate.swift */; };
 		5BC5FE492BEC24BE005A000F /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */; };
-		5BC5FE4E2BEC24BE005A000F /* WeSplitPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE4D2BEC24BE005A000F /* WeSplitPresentationTests.swift */; };
+		5BC5FE4E2BEC24BE005A000F /* WeSplitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE4D2BEC24BE005A000F /* WeSplitViewModelTests.swift */; };
 		5BC5FE4F2BEC24BE005A000F /* WeSplitPresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC5FE5C2BF6AFBA005A000F /* WeSplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */; };
 		5BC5FE5E2BF6B1BE005A000F /* TipOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */; };
@@ -85,7 +85,7 @@
 		5BC5FE412BEC24BE005A000F /* WeSplitPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC5FE432BEC24BE005A000F /* WeSplitPresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitPresentation.h; sourceTree = "<group>"; };
 		5BC5FE482BEC24BE005A000F /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BC5FE4D2BEC24BE005A000F /* WeSplitPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitPresentationTests.swift; sourceTree = "<group>"; };
+		5BC5FE4D2BEC24BE005A000F /* WeSplitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitViewModelTests.swift; sourceTree = "<group>"; };
 		5BC5FE5B2BF6AFBA005A000F /* WeSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitViewModel.swift; sourceTree = "<group>"; };
 		5BC5FE5D2BF6B1BE005A000F /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
 		5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPeopleOption.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		5BC5FE4C2BEC24BE005A000F /* WeSplitPresentationTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BC5FE4D2BEC24BE005A000F /* WeSplitPresentationTests.swift */,
+				5BC5FE4D2BEC24BE005A000F /* WeSplitViewModelTests.swift */,
 			);
 			path = WeSplitPresentationTests;
 			sourceTree = "<group>";
@@ -515,7 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC5FE4E2BEC24BE005A000F /* WeSplitPresentationTests.swift in Sources */,
+				5BC5FE4E2BEC24BE005A000F /* WeSplitViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
