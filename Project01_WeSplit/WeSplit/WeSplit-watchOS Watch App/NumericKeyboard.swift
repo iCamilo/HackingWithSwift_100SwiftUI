@@ -43,9 +43,9 @@ struct NumericKeyboard: View {
     }
     
     private var decimalKey: some View {
-        Key(label: ",", labelColor: .green) {
-            if text.contains(",") { return }
-            text += ","
+        Key(label: ".", labelColor: .green) {
+            if text.contains(".") { return }
+            text += "."
         }
     }
 }
