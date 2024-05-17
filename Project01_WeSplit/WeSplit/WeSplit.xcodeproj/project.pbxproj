@@ -264,10 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				5B57A1392BF7BFAC00A7E3AC /* WeSplit_watchOSApp.swift */,
-				5B57A1582BF7C3B300A7E3AC /* WeSplitView.swift */,
+				5BF5E5572BF81F38001A9BAE /* Views */,
 				5B57A13D2BF7BFAD00A7E3AC /* Assets.xcassets */,
 				5B57A13F2BF7BFAD00A7E3AC /* Preview Content */,
-				5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */,
 			);
 			path = "WeSplit-watchOS Watch App";
 			sourceTree = "<group>";
@@ -353,6 +352,15 @@
 				5BC5FE4D2BEC24BE005A000F /* WeSplitViewModelTests.swift */,
 			);
 			path = WeSplitPresentationTests;
+			sourceTree = "<group>";
+		};
+		5BF5E5572BF81F38001A9BAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B57A1582BF7C3B300A7E3AC /* WeSplitView.swift */,
+				5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
