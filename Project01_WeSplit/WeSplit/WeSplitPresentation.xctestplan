@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "1966F88D-0A87-497D-88BF-2A10CEF2268F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WeSplit.xcodeproj",
+        "identifier" : "5BC5FE472BEC24BE005A000F",
+        "name" : "WeSplitPresentationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
