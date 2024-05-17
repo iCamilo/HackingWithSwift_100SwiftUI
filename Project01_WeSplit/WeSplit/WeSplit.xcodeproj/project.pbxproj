@@ -24,6 +24,7 @@
 		5B57A1742BF7C5F800A7E3AC /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; };
 		5B57A1752BF7C5F800A7E3AC /* WeSplitPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B57A17A2BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57A1792BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift */; };
+		5B57A17C2BF8028C00A7E3AC /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */; };
 		5BC5FE242BEBD843005A000F /* CalculateTipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */; };
 		5BC5FE252BEBD843005A000F /* WeSplitTipCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC5FE302BEBEF61005A000F /* TipTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */; };
@@ -136,6 +137,7 @@
 		5B57A1402BF7BFAD00A7E3AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B57A1582BF7C3B300A7E3AC /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		5B57A1792BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsCalculatorAndRater.swift; sourceTree = "<group>"; };
+		5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeyboard.swift; sourceTree = "<group>"; };
 		5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitTipCalculator.h; sourceTree = "<group>"; };
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				5B57A1582BF7C3B300A7E3AC /* WeSplitView.swift */,
 				5B57A13D2BF7BFAD00A7E3AC /* Assets.xcassets */,
 				5B57A13F2BF7BFAD00A7E3AC /* Preview Content */,
+				5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */,
 			);
 			path = "WeSplit-watchOS Watch App";
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B57A17C2BF8028C00A7E3AC /* NumericKeyboard.swift in Sources */,
 				5B57A1592BF7C3B300A7E3AC /* WeSplitView.swift in Sources */,
 				5B57A17A2BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift in Sources */,
 				5B57A13A2BF7BFAC00A7E3AC /* WeSplit_watchOSApp.swift in Sources */,
