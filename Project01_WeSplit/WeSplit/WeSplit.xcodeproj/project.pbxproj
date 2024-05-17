@@ -22,7 +22,6 @@
 		5B57A1442BF7BFAD00A7E3AC /* WeSplit-watchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B57A1372BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5B57A1592BF7C3B300A7E3AC /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57A1582BF7C3B300A7E3AC /* WeSplitView.swift */; };
 		5B57A1742BF7C5F800A7E3AC /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; };
-		5B57A1752BF7C5F800A7E3AC /* WeSplitPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B57A17A2BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57A1792BF7C65500A7E3AC /* PreviewsCalculatorAndRater.swift */; };
 		5B57A17C2BF8028C00A7E3AC /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */; };
 		5BC5FE242BEBD843005A000F /* CalculateTipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */; };
@@ -39,6 +38,8 @@
 		5BC5FE602BF6B1D5005A000F /* TotalPeopleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE5F2BF6B1D5005A000F /* TotalPeopleOption.swift */; };
 		5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */; };
 		5BC5FE642BF6BB27005A000F /* TipRateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE632BF6BB27005A000F /* TipRateResult.swift */; };
+		5BF5E5592BF821D9001A9BAE /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
+		5BF5E55A2BF821D9001A9BAE /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +64,6 @@
 			remoteGlobalIDString = 5BC5FE162BEBD843005A000F;
 			remoteInfo = WeSplitTipCalculator;
 		};
-		5B57A1422BF7BFAD00A7E3AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B57A1362BF7BFAC00A7E3AC;
-			remoteInfo = "WeSplit-watchOS Watch App";
-		};
 		5B57A1762BF7C5F800A7E3AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
@@ -91,6 +85,20 @@
 			remoteGlobalIDString = 5BC5FE402BEC24BE005A000F;
 			remoteInfo = WeSplitPresentation;
 		};
+		5BF5E55B2BF821D9001A9BAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC5FE162BEBD843005A000F;
+			remoteInfo = WeSplitTipCalculator;
+		};
+		5BF5E55E2BF8224E001A9BAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B14570E2443E9E0001BC8BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B57A1362BF7BFAC00A7E3AC;
+			remoteInfo = "WeSplit-watchOS Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,13 +113,13 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B57A1782BF7C5F800A7E3AC /* Embed Frameworks */ = {
+		5BF5E55D2BF821D9001A9BAE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B57A1752BF7C5F800A7E3AC /* WeSplitPresentation.framework in Embed Frameworks */,
+				5BF5E55A2BF821D9001A9BAE /* WeSplitTipCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +161,7 @@
 		5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotalResult.swift; sourceTree = "<group>"; };
 		5BC5FE632BF6BB27005A000F /* TipRateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRateResult.swift; sourceTree = "<group>"; };
 		5BF5E5582BF82128001A9BAE /* WeSplitPresentation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeSplitPresentation.xctestplan; sourceTree = "<group>"; };
+		5BF5E5602BF8228B001A9BAE /* WeSplitTipCalculator.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeSplitTipCalculator.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B57A1742BF7C5F800A7E3AC /* WeSplitPresentation.framework in Frameworks */,
+				5BF5E5592BF821D9001A9BAE /* WeSplitTipCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +232,7 @@
 				5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */,
 				5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */,
 				5BF5E5582BF82128001A9BAE /* WeSplitPresentation.xctestplan */,
+				5BF5E5602BF8228B001A9BAE /* WeSplitTipCalculator.xctestplan */,
 				5B57A1372BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App.app */,
 			);
 			sourceTree = "<group>";
@@ -401,7 +412,7 @@
 			dependencies = (
 				5B3721BC2BF6C19B000EF7D7 /* PBXTargetDependency */,
 				5B3721C12BF6C1E1000EF7D7 /* PBXTargetDependency */,
-				5B57A1432BF7BFAD00A7E3AC /* PBXTargetDependency */,
+				5BF5E55F2BF8224E001A9BAE /* PBXTargetDependency */,
 			);
 			name = "WeSplit-iOS";
 			productName = "WeSplit-iOS";
@@ -415,12 +426,13 @@
 				5B57A1332BF7BFAC00A7E3AC /* Sources */,
 				5B57A1342BF7BFAC00A7E3AC /* Frameworks */,
 				5B57A1352BF7BFAC00A7E3AC /* Resources */,
-				5B57A1782BF7C5F800A7E3AC /* Embed Frameworks */,
+				5BF5E55D2BF821D9001A9BAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5B57A1772BF7C5F800A7E3AC /* PBXTargetDependency */,
+				5BF5E55C2BF821D9001A9BAE /* PBXTargetDependency */,
 			);
 			name = "WeSplit-watchOS Watch App";
 			productName = "WeSplit-watchOS Watch App";
@@ -685,11 +697,6 @@
 			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
 			targetProxy = 5B3721C42BF6C4B7000EF7D7 /* PBXContainerItemProxy */;
 		};
-		5B57A1432BF7BFAD00A7E3AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B57A1362BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App */;
-			targetProxy = 5B57A1422BF7BFAD00A7E3AC /* PBXContainerItemProxy */;
-		};
 		5B57A1772BF7C5F800A7E3AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5BC5FE402BEC24BE005A000F /* WeSplitPresentation */;
@@ -704,6 +711,16 @@
 			isa = PBXTargetDependency;
 			target = 5BC5FE402BEC24BE005A000F /* WeSplitPresentation */;
 			targetProxy = 5BC5FE4A2BEC24BE005A000F /* PBXContainerItemProxy */;
+		};
+		5BF5E55C2BF821D9001A9BAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC5FE162BEBD843005A000F /* WeSplitTipCalculator */;
+			targetProxy = 5BF5E55B2BF821D9001A9BAE /* PBXContainerItemProxy */;
+		};
+		5BF5E55F2BF8224E001A9BAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B57A1362BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App */;
+			targetProxy = 5BF5E55E2BF8224E001A9BAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -924,6 +941,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "WeSplit-watchOS";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.iCamilo.WeSplit-iOS";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -961,6 +979,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "WeSplit-watchOS";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.iCamilo.WeSplit-iOS";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

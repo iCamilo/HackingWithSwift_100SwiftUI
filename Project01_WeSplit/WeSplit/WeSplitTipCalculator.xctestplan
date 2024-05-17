@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "6380F913-D66E-4A2C-805B-03DA44BF933B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WeSplit.xcodeproj",
+        "identifier" : "5BC5FE1D2BEBD843005A000F",
+        "name" : "WeSplitTipCalculatorTests"
+      }
+    }
+  ],
+  "version" : 1
+}
