@@ -82,6 +82,7 @@
 		5B3721CE2BF6CBC3000EF7D7 /* PreviewsCalculatorAndRater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsCalculatorAndRater.swift; sourceTree = "<group>"; };
 		5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WeSplit-CI.xctestplan"; sourceTree = "<group>"; };
 		5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitTipCalculator.h; sourceTree = "<group>"; };
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
 				5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */,
 				5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */,
+				5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "3F757E28-A2E2-49D0-8E2E-B98B75CC31C4",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WeSplit.xcodeproj",
+        "identifier" : "5BC5FE472BEC24BE005A000F",
+        "name" : "WeSplitPresentationTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WeSplit.xcodeproj",
+        "identifier" : "5BC5FE1D2BEBD843005A000F",
+        "name" : "WeSplitTipCalculatorTests"
+      }
+    }
+  ],
+  "version" : 1
+}
