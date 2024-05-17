@@ -7,11 +7,12 @@ import WeSplitPresentation
 
 struct WeSplitView: View {
     @State var viewModel: WeSplitViewModel
+    @State private var showNumericKeyboard = false
     
     var body: some View {
         TabView {
-            stepView("1/3 Enter Check Total") {
-                TextField("", text: $viewModel.checkTotal)
+            stepView("1/3 Tap to enter Check Total") {
+                checkInput
             }
             
             stepView("2/3 Select Tip") {
@@ -40,6 +41,19 @@ struct WeSplitView: View {
             Spacer()
         }
         .padding(.horizontal)
+    }
+    
+    private var checkInput: some View {
+        Text(viewModel.checkTotal)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .background(Color.black)
+            .padding()
+            .sheet(isPresented: $showNumericKeyboard) {
+                NumericKeyboard(text: $viewModel.checkTotal)
+            }
+            .onTapGesture {
+                showNumericKeyboard.toggle()
+            }
     }
     
     private var tipPicker: some View {

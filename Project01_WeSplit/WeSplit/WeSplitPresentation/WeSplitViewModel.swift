@@ -35,7 +35,7 @@ public struct WeSplitViewModel {
         self.totalPeopleRange = 1...maxPartySize
     }
     
-    public var checkTotal: String = "" {
+    public var checkTotal: String = "0" {
         didSet {
             calculateTip()
         }
