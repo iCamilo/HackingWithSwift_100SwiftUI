@@ -83,3 +83,10 @@ struct WeSplitView: View {
         }
     }
 }
+
+#Preview {
+    let tipCalculatorAndRater = PreviewsCalculatorAndRater()
+    let viewModel = WeSplitViewModel(tipCalculator: tipCalculatorAndRater, tipRater: tipCalculatorAndRater, tipOptions: [.init(value: 10)], maxPartySize: 2)!
+    
+    return WeSplitView(viewModel: viewModel)
+}
