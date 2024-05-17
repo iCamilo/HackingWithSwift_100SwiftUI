@@ -11,11 +11,8 @@
 		5B3721B12BF6C18B000EF7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */; };
 		5B3721B42BF6C18B000EF7D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3721B32BF6C18B000EF7D7 /* Preview Assets.xcassets */; };
 		5B3721B92BF6C19B000EF7D7 /* WeSplitPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; };
-		5B3721BA2BF6C19B000EF7D7 /* WeSplitPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3721BE2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
-		5B3721BF2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3721C22BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
-		5B3721C32BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3721CB2BF6C4F5000EF7D7 /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */; };
 		5B3721CD2BF6C4F5000EF7D7 /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */; };
 		5B3721CF2BF6CBC4000EF7D7 /* PreviewsCalculatorAndRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3721CE2BF6CBC3000EF7D7 /* PreviewsCalculatorAndRater.swift */; };
@@ -73,37 +70,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		5B3721BD2BF6C19B000EF7D7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5B3721BA2BF6C19B000EF7D7 /* WeSplitPresentation.framework in Embed Frameworks */,
-				5B3721BF2BF6C1E1000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B3721C62BF6C4B7000EF7D7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5B3721C32BF6C4B7000EF7D7 /* WeSplitTipCalculator.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitTipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B3721A32BF6C118000EF7D7 /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitTipCalculatorTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitTipCalculatorTests.xctest; sourceTree = "<absolute>"; };
 		5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B3721A52BF6C118000EF7D7 /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitPresentationTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitPresentationTests.xctest; sourceTree = "<absolute>"; };
 		5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeSplit-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3721AC2BF6C189000EF7D7 /* WeSplit_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplit_iOSApp.swift; sourceTree = "<group>"; };
 		5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +80,8 @@
 		5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		5B3721CE2BF6CBC3000EF7D7 /* PreviewsCalculatorAndRater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsCalculatorAndRater.swift; sourceTree = "<group>"; };
+		5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC5FE192BEBD843005A000F /* WeSplitTipCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeSplitTipCalculator.h; sourceTree = "<group>"; };
 		5BC5FE232BEBD843005A000F /* CalculateTipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTipsTests.swift; sourceTree = "<group>"; };
 		5BC5FE2F2BEBEF61005A000F /* TipTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTotal.swift; sourceTree = "<group>"; };
@@ -181,6 +152,8 @@
 				5B3721B82BF6C19B000EF7D7 /* Frameworks */,
 				5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */,
 				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
+				5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */,
+				5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,7 +296,6 @@
 				5B3721A62BF6C189000EF7D7 /* Sources */,
 				5B3721A72BF6C189000EF7D7 /* Frameworks */,
 				5B3721A82BF6C189000EF7D7 /* Resources */,
-				5B3721BD2BF6C19B000EF7D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,7 +341,7 @@
 			);
 			name = WeSplitTipCalculatorTests;
 			productName = TipCalculatorTests;
-			productReference = 5B3721A32BF6C118000EF7D7 /* WeSplitTipCalculatorTests.xctest */;
+			productReference = 5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5BC5FE402BEC24BE005A000F /* WeSplitPresentation */ = {
@@ -380,7 +352,6 @@
 				5BC5FE3D2BEC24BE005A000F /* Sources */,
 				5BC5FE3E2BEC24BE005A000F /* Frameworks */,
 				5BC5FE3F2BEC24BE005A000F /* Resources */,
-				5B3721C62BF6C4B7000EF7D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,7 +378,7 @@
 			);
 			name = WeSplitPresentationTests;
 			productName = WeSplitPresentationTests;
-			productReference = 5B3721A52BF6C118000EF7D7 /* WeSplitPresentationTests.xctest */;
+			productReference = 5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -806,6 +777,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
@@ -853,6 +825,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
@@ -951,6 +924,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
@@ -998,6 +972,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
