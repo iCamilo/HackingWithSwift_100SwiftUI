@@ -202,8 +202,8 @@
 		5B3721AB2BF6C189000EF7D7 /* WeSplit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5B3721C72BF6C4F5000EF7D7 /* UI */,
 				5B3721AC2BF6C189000EF7D7 /* WeSplit_iOSApp.swift */,
+				5B3721C72BF6C4F5000EF7D7 /* Views */,
 				5B3721B02BF6C18B000EF7D7 /* Assets.xcassets */,
 				5B3721B22BF6C18B000EF7D7 /* Preview Content */,
 			);
@@ -226,13 +226,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5B3721C72BF6C4F5000EF7D7 /* UI */ = {
+		5B3721C72BF6C4F5000EF7D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */,
 				5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */,
 			);
-			path = UI;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5B57A1382BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App */ = {
