@@ -38,7 +38,6 @@
 		5BC5FE622BF6B1EE005A000F /* TipTotalResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE612BF6B1EE005A000F /* TipTotalResult.swift */; };
 		5BC5FE642BF6BB27005A000F /* TipRateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5FE632BF6BB27005A000F /* TipRateResult.swift */; };
 		5BF5E5592BF821D9001A9BAE /* WeSplitTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; };
-		5BF5E55A2BF821D9001A9BAE /* WeSplitTipCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,20 +91,6 @@
 			remoteInfo = WeSplitTipCalculator;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5BF5E55D2BF821D9001A9BAE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5BF5E55A2BF821D9001A9BAE /* WeSplitTipCalculator.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplitTipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,7 +390,6 @@
 				5B57A1332BF7BFAC00A7E3AC /* Sources */,
 				5B57A1342BF7BFAC00A7E3AC /* Frameworks */,
 				5B57A1352BF7BFAC00A7E3AC /* Resources */,
-				5BF5E55D2BF821D9001A9BAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
