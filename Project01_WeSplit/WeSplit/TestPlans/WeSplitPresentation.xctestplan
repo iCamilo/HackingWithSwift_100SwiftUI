@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:WeSplit.xcodeproj",
+          "identifier" : "5BC5FE402BEC24BE005A000F",
+          "name" : "WeSplitPresentation"
+        }
+      ]
+    },
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [

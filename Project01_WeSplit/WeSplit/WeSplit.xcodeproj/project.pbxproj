@@ -102,8 +102,8 @@
 		5B3721C82BF6C4F5000EF7D7 /* HeaderTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		5B3721CA2BF6C4F5000EF7D7 /* WeSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		5B3721CE2BF6CBC3000EF7D7 /* PreviewsCalculatorAndRater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsCalculatorAndRater.swift; sourceTree = "<group>"; };
-		5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeSplitPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitTipCalculatorTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitTipCalculatorTests.xctest; sourceTree = "<absolute>"; };
+		5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeSplitPresentationTests.xctest; path = /Users/icamilo/Documents/Workspaces/HackingWithSwift_100SwiftUI/Project01_WeSplit/WeSplit/build/Debug/WeSplitPresentationTests.xctest; sourceTree = "<absolute>"; };
 		5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WeSplit-CI.xctestplan"; sourceTree = "<group>"; };
 		5B57A1372BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeSplit-watchOS Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B57A1392BF7BFAC00A7E3AC /* WeSplit_watchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplit_watchOSApp.swift; sourceTree = "<group>"; };
@@ -188,18 +188,14 @@
 				5BC5FE222BEBD843005A000F /* TipCalculatorTests */,
 				5BC5FE422BEC24BE005A000F /* WeSplitPresentation */,
 				5BC5FE4C2BEC24BE005A000F /* WeSplitPresentationTests */,
-				5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */,
 				5B3721AB2BF6C189000EF7D7 /* WeSplit-iOS */,
 				5B57A1382BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App */,
 				5B3721B82BF6C19B000EF7D7 /* Frameworks */,
 				5B3721A22BF6C118000EF7D7 /* WeSplitTipCalculator.framework */,
 				5B3721A42BF6C118000EF7D7 /* WeSplitPresentation.framework */,
-				5B57A1302BF7BBA900A7E3AC /* WeSplitTipCalculatorTests.xctest */,
-				5B57A1312BF7BBA900A7E3AC /* WeSplitPresentationTests.xctest */,
-				5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */,
-				5BF5E5582BF82128001A9BAE /* WeSplitPresentation.xctestplan */,
-				5BF5E5602BF8228B001A9BAE /* WeSplitTipCalculator.xctestplan */,
+				5BF5E58A2BF8419A001A9BAE /* TestPlans */,
 				5B57A1372BF7BFAC00A7E3AC /* WeSplit-watchOS Watch App.app */,
+				5B3721AA2BF6C189000EF7D7 /* WeSplit-iOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,6 +336,16 @@
 				5B57A17B2BF8028C00A7E3AC /* NumericKeyboard.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5BF5E58A2BF8419A001A9BAE /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				5B57A1322BF7BEFB00A7E3AC /* WeSplit-CI.xctestplan */,
+				5BF5E5582BF82128001A9BAE /* WeSplitPresentation.xctestplan */,
+				5BF5E5602BF8228B001A9BAE /* WeSplitTipCalculator.xctestplan */,
+			);
+			path = TestPlans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

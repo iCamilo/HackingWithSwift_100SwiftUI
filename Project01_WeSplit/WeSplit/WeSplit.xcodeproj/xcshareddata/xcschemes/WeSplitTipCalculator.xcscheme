@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:WeSplitTipCalculator.xctestplan"
+            reference = "container:TestPlans/WeSplitTipCalculator.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

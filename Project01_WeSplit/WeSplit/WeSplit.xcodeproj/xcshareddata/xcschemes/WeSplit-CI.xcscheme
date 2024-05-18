@@ -43,7 +43,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:WeSplit-CI.xctestplan"
+            reference = "container:TestPlans/WeSplit-CI.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
