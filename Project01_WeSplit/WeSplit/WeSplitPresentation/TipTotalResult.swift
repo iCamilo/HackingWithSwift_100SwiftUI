@@ -40,10 +40,3 @@ private extension NumberFormatter {
         self.string(from: double as NSNumber) ?? ""
     }
 }
-
-// MARK: - NumberFormatter + double(from: String)
-private extension NumberFormatter {
-    func double(from string: String) -> Double? {
-        self.number(from: string) as? Double
-    }
-}
