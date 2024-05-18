@@ -20,20 +20,6 @@
                ReferencedContainer = "container:WeSplit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B3721A92BF6C189000EF7D7"
-               BuildableName = "WeSplit-iOS.app"
-               BlueprintName = "WeSplit-iOS"
-               ReferencedContainer = "container:WeSplit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
