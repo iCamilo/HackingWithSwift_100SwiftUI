@@ -128,6 +128,7 @@
 		5BC5FE632BF6BB27005A000F /* TipRateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRateResult.swift; sourceTree = "<group>"; };
 		5BF5E5582BF82128001A9BAE /* WeSplitPresentation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeSplitPresentation.xctestplan; sourceTree = "<group>"; };
 		5BF5E5602BF8228B001A9BAE /* WeSplitTipCalculator.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeSplitTipCalculator.xctestplan; sourceTree = "<group>"; };
+		5BF5E58D2BFE984E001A9BAE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +185,7 @@
 		5B14570D2443E9E0001BC8BD = {
 			isa = PBXGroup;
 			children = (
+				5BF5E58D2BFE984E001A9BAE /* README.md */,
 				5BC5FE182BEBD843005A000F /* WeSplitTipCalculator */,
 				5BC5FE222BEBD843005A000F /* TipCalculatorTests */,
 				5BC5FE422BEC24BE005A000F /* WeSplitPresentation */,
