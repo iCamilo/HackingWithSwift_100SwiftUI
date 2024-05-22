@@ -1,6 +1,6 @@
 # WeSplit
 
-A simple project to calculate the check tip and how to split it between the party members. \
+A simple project to calculate the check total including the tip and how to split it between the party members. \
 It is a single project, but divided in multiple modules 
 
 - `WeSplitTipCalculator` - Business Module containing the business use cases interfaces and implementations.
@@ -19,7 +19,13 @@ It is a single project, but divided in multiple modules
 
 **iOS**
 
+![Simulator Screen Recording - iPhone SE (3rd generation) - 2024-05-22 at 17 02 11](https://github.com/iCamilo/HackingWithSwift_100SwiftUI/assets/8431922/8785ff6e-f4fb-411b-bdf0-4503fe6db2d3)
+
+
 **watchOS**
+
+![Simulator Screen Recording - Apple Watch SE (40mm) (2nd generation) - 2024-05-22 at 17 02 52](https://github.com/iCamilo/HackingWithSwift_100SwiftUI/assets/8431922/bacac946-4295-4cf0-9dda-c341caadee61)
+
 
 ## Specs
 
