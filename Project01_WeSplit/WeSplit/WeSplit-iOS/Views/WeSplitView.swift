@@ -15,34 +15,21 @@ struct WeSplitView: View {
     var body: some View {
         NavigationView {
             Form {
-                section("How much was the check?")
-                {
-                    TextField("Check Total", text: $viewModel.checkTotal)
-                        .keyboardType(.decimalPad)
+                section("How much was the check?") {
+                    checkTotalInput
                 }
                 
-                section("How many people attend?")
-                {
-                    Stepper(value: $viewModel.totalPeople.value, in: viewModel.totalPeopleRange) {
-                        Text(viewModel.totalPeople.description)
-                    }
+                section("How many people attend?") {
+                    totalPeopleSelector
                 }
                 
-                section("What about the tip?")
-                {
-                    Picker("Tip", selection: $viewModel.tip.value) {
-                        ForEach(viewModel.tipOptions, id:\.self.value) {
-                            Text($0.description)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
+                section("What about the tip?") {
+                    tipSelector
                 }
                 
                 if viewModel.showTotal {
                     section("TOTAL") {
-                        Text(viewModel.tipTotalResult?.tipOverTotal ?? "")
-                        Text(viewModel.tipTotalResult?.tipPlusTip ?? "")
-                        Text(viewModel.tipTotalResult?.totalPerPerson ?? "")
+                        totalInfo
                     }
                    .foregroundColor(showTotalForegroundColor)
                 }
@@ -56,6 +43,33 @@ struct WeSplitView: View {
         {
             content()
         }
+    }
+    
+    private var checkTotalInput: some View {
+        TextField("Check Total", text: $viewModel.checkTotal)
+            .keyboardType(.decimalPad)
+    }
+    
+    private var totalPeopleSelector: some View {
+        Stepper(value: $viewModel.totalPeople.value, in: viewModel.totalPeopleRange) {
+            Text(viewModel.totalPeople.description)
+        }
+    }
+    
+    private var tipSelector: some View {
+        Picker("Tip", selection: $viewModel.tip.value) {
+            ForEach(viewModel.tipOptions, id:\.self.value) {
+                Text($0.description)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+    }
+    
+    @ViewBuilder
+    private var totalInfo: some View {
+        Text(viewModel.tipTotalResult?.tipOverTotal ?? "")
+        Text(viewModel.tipTotalResult?.tipPlusTip ?? "")
+        Text(viewModel.tipTotalResult?.totalPerPerson ?? "")
     }
     
     private var showTotalForegroundColor: Color {
