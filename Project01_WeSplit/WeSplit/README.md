@@ -78,6 +78,8 @@ _Happy Path_
 
 ## Architecture Diagram 
 
+![WeSplit](https://github.com/iCamilo/HackingWithSwift_100SwiftUI/assets/8431922/fe77e302-8ae0-409d-be55-ec0049613dc9)
+
 
 
 
