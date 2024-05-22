@@ -15,20 +15,20 @@ struct WeSplitView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: sectionTitle("How much was the check?"))
+                section("How much was the check?")
                 {
                     TextField("Check Total", text: $viewModel.checkTotal)
                         .keyboardType(.decimalPad)
                 }
                 
-                Section(header: sectionTitle("How many people attend?"))
+                section("How many people attend?")
                 {
                     Stepper(value: $viewModel.totalPeople.value, in: viewModel.totalPeopleRange) {
                         Text(viewModel.totalPeople.description)
                     }
                 }
                 
-                Section(header: sectionTitle("What about the tip?"))
+                section("What about the tip?")
                 {
                     Picker("Tip", selection: $viewModel.tip.value) {
                         ForEach(viewModel.tipOptions, id:\.self.value) {
@@ -39,16 +39,22 @@ struct WeSplitView: View {
                 }
                 
                 if viewModel.showTotal {
-                    Section(header: HeaderTitle(title: "TOTAL"))
-                    {
+                    section("TOTAL") {
                         Text(viewModel.tipTotalResult?.tipOverTotal ?? "")
                         Text(viewModel.tipTotalResult?.tipPlusTip ?? "")
                         Text(viewModel.tipTotalResult?.totalPerPerson ?? "")
                     }
-                    .foregroundColor(showTotalForegroundColor)
+                   .foregroundColor(showTotalForegroundColor)
                 }
             }
             .navigationBarTitle("We Split")
+        }
+    }
+    
+    private func section(_ title: String, @ViewBuilder content: () -> some View) -> some View {
+        Section(header: HeaderTitle(title: title, font: .headline))
+        {
+            content()
         }
     }
     
@@ -61,10 +67,6 @@ struct WeSplitView: View {
         case .green:
             return Color.green
         }
-    }
-    
-    private func sectionTitle(_ title: String) -> some View {
-        HeaderTitle(title: title, font: .headline)
     }
 }
 
